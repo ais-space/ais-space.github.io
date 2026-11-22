@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SIL (Semantic Interface Layer) — Web Navigation for AI Agents | AIS Platform</title>
+  <meta name="description" content="SIL (Semantic Interface Layer): application extension of STF for AI agent web navigation without parsing raw HTML/DOM or executing JavaScript, featuring 5 conformance profiles and a live deployment on ais-platform.dev.">
+  <link rel="sil" href="./sil/" type="text/sil">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <div class="container">
+    <nav class="topbar" aria-label="Main navigation">
+      <a class="brand" href="/">AIS <span>Platform</span></a>
+      <div class="site-nav">
+        <a href="/">Home</a>
+        <a class="active" href="/ecosystem/">STF Ecosystem</a>
+        <a href="/monitoring/">Code Monitoring</a>
+        <a href="/careers/">Careers &amp; Partners</a>
+      </div>
+    </nav>
+
+    <div class="subnav" aria-label="Ecosystem components">
+      <span class="label">Ecosystem:</span>
+      <a href="/ecosystem/">Hub</a>
+      <a href="/ecosystem/stf/">STF</a>
+      <a class="active" href="/ecosystem/sil-spec/">SIL</a>
+      <a href="/ecosystem/stf-memory/">STF-Memory</a>
+      <a href="/ecosystem/sir/">SIR</a>
+      <a href="/ecosystem/sir-compiler/">SIR Compiler</a>
+    </div>
+
+    <div class="sil-banner">
+      <span><strong>AI Agent Interface (SIL v0.3):</strong> Inspect the live SIL layer for this very page right now.</span>
+      <a class="sil-link-btn" href="./sil/">SIL Layer for AI Agents: /ecosystem/sil-spec/sil/</a>
+    </div>
+
+    <header class="hero">
+      <div class="badge-row">
+        <span class="badge">STF Ecosystem · Web &amp; App Interface</span>
+        <a class="badge" href="./sil/">SIL Layer: /ecosystem/sil/index.sil</a>
+      </div>
+      <h1>SIL — Semantic Interface Layer</h1>
+      <p class="subtitle">
+        An application extension of STF enabling AI agents to discover, navigate, and interact with web interfaces through pure semantics — without scraping raw HTML/DOM trees, guessing visual layout, or executing client-side JavaScript.
+      </p>
+      <div class="nav-links">
+        <a class="btn btn-primary" href="https://github.com/ais-space/sil" target="_blank" rel="noopener">GitHub: github.com/ais-space/sil →</a>
+        <a class="btn" href="./sil/">Inspect Live ./index.sil</a>
+        <a class="btn" href="/ecosystem/stf-memory/">Next: STF-Memory →</a>
+      </div>
+    </header>
+
+    <section>
+      <h2>Why Web Navigation for Agents Needs SIL</h2>
+      <div class="card card-highlight">
+        <h3>Eliminating HTML/DOM Scraping &amp; Headless Browser Overhead</h3>
+        <p>
+          Today's web agents either scrape megabytes of raw HTML/DOM cluttered with CSS utility classes or spin up heavy headless browsers to render JavaScript and take screenshots. Both paths are slow, expensive in tokens, fragile across UI redesigns, and prone to DOM-injected prompt attacks.
+        </p>
+        <p>
+          SIL provides a clean parallel representation linked via <code>&lt;link rel="sil" href="./sil/" type="text/sil"&gt;</code> and visible page links. An agent fetches a concise, deterministic STF tree describing the page's purpose, navigation map, content sections, and interactive capabilities.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <h2>The 5 Conformance Profiles of SIL</h2>
+      <div class="card">
+        <p>
+          SIL is structured into <strong>5 progressive conformance profiles</strong> so publishers can adopt it incrementally — from static informational sites to full transactional web applications:
+        </p>
+        <ul class="clean">
+          <li><strong>Profile 1 — Static Content &amp; Navigation (Read-Only):</strong> Declares document context, semantic content tree, and explicit cross-page <code>Navigate</code> links (deployed live across all 9 pages of <code>ais-platform.dev</code>).</li>
+          <li><strong>Profile 2 — Structured Discovery &amp; Indexing:</strong> Adds canonical metadata, section roles, and typed entity summaries for deterministic agent indexing and retrieval.</li>
+          <li><strong>Profile 3 — Parameterized Queries &amp; Forms:</strong> Defines typed input fields, validation constraints, and query actions without requiring DOM form emulation.</li>
+          <li><strong>Profile 4 — Stateful Actions &amp; Transactions:</strong> Encodes state transitions, preconditions, confirmation steps, and idempotency semantics for multi-step workflows.</li>
+          <li><strong>Profile 5 — Multi-Turn Agent Collaboration &amp; Streaming:</strong> Full bidirectional semantic interaction with trust-zone separation between system UI definitions and untrusted user-generated content.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Live Deployment on This Website</h2>
+      <div class="card card-highlight">
+        <h3>Inspect the Live SIL v0.3 Layer right here on <code>ais-platform.dev</code></h3>
+        <p>
+          Every single page of this site serves a companion <code>index.sil</code> document in SIL v0.3 format. You (or an AI agent browsing this page) can inspect the live SIL layer for this page directly at <a class="repo-link" href="./sil/"><code>/ecosystem/sil-spec/sil/</code></a> (canonical path: <a class="repo-link" href="/ecosystem/sil/index.sil"><code>/ecosystem/sil/index.sil</code></a>).
+        </p>
+<pre><code>Context
+    Version: 0.3
+    Document: AIS Platform — SIL (Semantic Interface Layer) Overview v1.1.0
+    CanonicalSil: /ecosystem/sil/index.sil
+    Language: en
+    Origin: System
+
+Page
+    Type: Page
+    Role: Content
+    Purpose: Detailed overview of SIL (Semantic Interface Layer)...</code></pre>
+        <p>
+          <a class="btn btn-primary" href="./sil/">Open Live ./index.sil for This Page →</a>
+          <a class="btn" href="https://github.com/ais-space/sil" target="_blank" rel="noopener">Specification on GitHub →</a>
+        </p>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-grid">
+        <div>
+          <strong>Vladimir Sitnikov — Architect &amp; Technical Founder</strong><br>
+          AIS Platform (<a class="repo-link" href="https://ais-platform.dev">ais-platform.dev</a>)<br>
+          SIL Interface for this page: <a class="repo-link" href="./sil/">/ecosystem/sil/index.sil</a>
+        </div>
+        <div>
+          Commercial &amp; Partnerships: <a class="repo-link" href="mailto:founder@ais-platform.dev">founder@ais-platform.dev</a><br>
+          Specification &amp; Security: <a class="repo-link" href="mailto:support@ais-platform.dev">support@ais-platform.dev</a>
+        </div>
+        <div>
+          Telegram: <a class="repo-link" href="https://t.me/Pastalog" target="_blank" rel="noopener">@Pastalog</a> (<a class="repo-link" href="https://t.me/Pastalog" target="_blank" rel="noopener">https://t.me/Pastalog</a>)<br>
+          GitHub: <a class="repo-link" href="https://github.com/ais-space" target="_blank" rel="noopener">https://github.com/ais-space</a><br>
+          LinkedIn: <a class="repo-link" href="https://www.linkedin.com/in/vladimir-sitnikov-3a61433b5" target="_blank" rel="noopener">https://www.linkedin.com/in/vladimir-sitnikov-3a61433b5</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

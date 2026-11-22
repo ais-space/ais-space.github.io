@@ -1,7 +1,7 @@
 Context
     Version: 0.3
     Document: AIS Platform — SIR Compiler (Self-Hosting SIR-to-WASM) Overview v1.1.0
-    CanonicalSil: /ecosystem/sir-compiler/index.sil
+    CanonicalSil: /ecosystem/sir-compiler/sil/
     Language: en
     Origin: System
 
@@ -19,47 +19,47 @@ Page
         NavHome
             Type: Link
             Caption: Home — AIS Platform Overview
-            Navigate: /index.sil
+            Navigate: /sil/
 
         NavEcosystemHub
             Type: Link
             Caption: STF Ecosystem Hub
-            Navigate: /ecosystem/index.sil
+            Navigate: /ecosystem/sil/
 
         NavSTF
             Type: Link
             Caption: STF — Semantic Text Format
-            Navigate: /ecosystem/stf/index.sil
+            Navigate: /ecosystem/stf/sil/
 
         NavSIL
             Type: Link
             Caption: SIL — Semantic Interface Layer
-            Navigate: /ecosystem/sil/index.sil
+            Navigate: /ecosystem/sil-spec/sil/
 
         NavSTFMemory
             Type: Link
             Caption: STF-Memory — Structured Long-Term Agent Memory
-            Navigate: /ecosystem/stf-memory/index.sil
+            Navigate: /ecosystem/stf-memory/sil/
 
         NavSIR
             Type: Link
             Caption: SIR — Semantic Intermediate Representation
-            Navigate: /ecosystem/sir/index.sil
+            Navigate: /ecosystem/sir/sil/
 
         NavSIRCompiler
             Type: Link
             Caption: SIR Compiler — Self-Hosting SIR-to-WASM Compiler
-            Navigate: /ecosystem/sir-compiler/index.sil
+            Navigate: /ecosystem/sir-compiler/sil/
 
         NavMonitoring
             Type: Link
             Caption: Commercial Offer — Sir Revizor Continuous Code Security Monitoring
-            Navigate: /monitoring/index.sil
+            Navigate: /monitoring/sil/
 
         NavCareers
             Type: Link
             Caption: Careers & Partnerships — Independent Sales Partner & Business Co-Founder
-            Navigate: /careers/index.sil
+            Navigate: /careers/sil/
 
     CompilerOverview
         Type: Section

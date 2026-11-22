@@ -1,0 +1,149 @@
+Context
+    Version: 0.3
+    Document: AIS Platform — SIL (Semantic Interface Layer) Overview v1.1.0
+    CanonicalSil: /ecosystem/sil-spec/sil/
+    Language: en
+    Origin: System
+
+Page
+    Type: Page
+    Role: Content
+    Purpose: Detailed overview of SIL (Semantic Interface Layer) — the application extension of STF for AI agent web navigation without parsing raw HTML/DOM or executing JavaScript, featuring 5 conformance profiles and a live implementation across ais-platform.dev.
+
+    SiteNavigation
+        Type: Section
+        Role: Navigation
+        Caption: AIS Platform Complete SIL Navigation Map
+        Purpose: Direct links to all 9 SIL semantic pages across ais-platform.dev
+
+        NavHome
+            Type: Link
+            Caption: Home — AIS Platform Overview
+            Navigate: /sil/
+
+        NavEcosystemHub
+            Type: Link
+            Caption: STF Ecosystem Hub
+            Navigate: /ecosystem/sil/
+
+        NavSTF
+            Type: Link
+            Caption: STF — Semantic Text Format
+            Navigate: /ecosystem/stf/sil/
+
+        NavSIL
+            Type: Link
+            Caption: SIL — Semantic Interface Layer
+            Navigate: /ecosystem/sil-spec/sil/
+
+        NavSTFMemory
+            Type: Link
+            Caption: STF-Memory — Structured Long-Term Agent Memory
+            Navigate: /ecosystem/stf-memory/sil/
+
+        NavSIR
+            Type: Link
+            Caption: SIR — Semantic Intermediate Representation
+            Navigate: /ecosystem/sir/sil/
+
+        NavSIRCompiler
+            Type: Link
+            Caption: SIR Compiler — Self-Hosting SIR-to-WASM Compiler
+            Navigate: /ecosystem/sir-compiler/sil/
+
+        NavMonitoring
+            Type: Link
+            Caption: Commercial Offer — Sir Revizor Continuous Code Security Monitoring
+            Navigate: /monitoring/sil/
+
+        NavCareers
+            Type: Link
+            Caption: Careers & Partnerships — Independent Sales Partner & Business Co-Founder
+            Navigate: /careers/sil/
+
+    SpecificationOverview
+        Type: Section
+        Role: Content
+        Caption: SIL — Semantic Interface Layer
+        Purpose: How SIL replaces raw HTML/DOM scraping and JS execution with pure STF semantics
+
+        CoreMechanism
+            Type: Text
+            Caption: Agent Web Navigation Without HTML/DOM or JS
+            Content: SIL extends STF with an application vocabulary for web pages and interfaces. Agents discover the SIL endpoint via the HTML head link (rel="sil") or visible SIL badges and traverse the site deterministically without rendering DOM trees or running client-side scripts.
+
+        ConformanceProfiles
+            Type: Section
+            Role: Content
+            Caption: The 5 Conformance Profiles of SIL
+
+            Profile1
+                Type: Text
+                Caption: Profile 1 — Static Content & Navigation
+                Content: Read-only semantic page structure, explicit Purpose descriptors, and cross-page Navigate links.
+
+            Profile2
+                Type: Text
+                Caption: Profile 2 — Structured Discovery & Indexing
+                Content: Canonical metadata, typed section roles, and deterministic entity summaries for agent retrieval.
+
+            Profile3
+                Type: Text
+                Caption: Profile 3 — Parameterized Queries & Forms
+                Content: Typed input parameters, constraints, and query targets without DOM form scraping.
+
+            Profile4
+                Type: Text
+                Caption: Profile 4 — Stateful Actions & Transactions
+                Content: Explicit preconditions, state transitions, and confirmation semantics for interactive workflows.
+
+            Profile5
+                Type: Text
+                Caption: Profile 5 — Multi-Turn Agent Collaboration & Trust Isolation
+                Content: Full interactive sessions separating authoritative interface semantics (Origin: System) from untrusted user content (Origin: UserContent).
+
+        LiveExample
+            Type: Link
+            Caption: Live SIL Representation of This Page
+            Navigate: /ecosystem/sil-spec/sil/
+
+        RepositoryLink
+            Type: Link
+            Caption: Official SIL Repository on GitHub
+            Navigate: https://github.com/ais-space/sil
+
+    ContactSection
+        Type: Section
+        Role: Content
+        Caption: Contacts — Vladimir Sitnikov
+        Purpose: Direct contact channels
+
+        FounderIdentity
+            Type: Text
+            Caption: Architect & Technical Founder
+            Content: Vladimir Sitnikov — Architect & Technical Founder
+
+        EmailCommercial
+            Type: Text
+            Caption: Commercial & Partnerships
+            Content: founder@ais-platform.dev
+
+        EmailSupport
+            Type: Text
+            Caption: Specification & Security
+            Content: support@ais-platform.dev
+
+        TelegramLink
+            Type: Link
+            Caption: Telegram (@Pastalog)
+            Navigate: https://t.me/Pastalog
+
+        GitHubLink
+            Type: Link
+            Caption: GitHub (ais-space)
+            Navigate: https://github.com/ais-space
+
+        LinkedInLink
+            Type: Link
+            Caption: LinkedIn (Vladimir Sitnikov)
+            Navigate: https://www.linkedin.com/in/vladimir-sitnikov-3a61433b5

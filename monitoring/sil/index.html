@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SIL Layer — /monitoring/sil/</title>
+  <link rel="alternate" href="../" type="text/html">
+  <style>
+    body {
+      margin: 0;
+      padding: 24px;
+      background: #0b0f17;
+      color: #e6edf7;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 14px;
+      line-height: 1.55;
+    }
+    pre {
+      margin: 0;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+  </style>
+</head>
+<body>
+<pre>Context
+    Version: 0.3
+    Document: AIS Platform — Commercial Offer: Sir Revizor Continuous Code Security Monitoring v1.1.0
+    CanonicalSil: /monitoring/sil/
+    Language: en
+    Origin: System
+
+Page
+    Type: Page
+    Role: Content
+    Purpose: Commercial offer for Sir Revizor Continuous Code Security Monitoring — daily repository monitoring across your entire language stack with execution-verified findings, reproducible PoC traces, candidates refuted by execution, quiet-month reports, 24-hour business-day SLA, pricing, and a complete sanitized sample report (ExampleVault.sol).
+
+    SiteNavigation
+        Type: Section
+        Role: Navigation
+        Caption: AIS Platform Complete SIL Navigation Map
+        Purpose: Direct links to all 9 SIL semantic pages across ais-platform.dev
+
+        NavHome
+            Type: Link
+            Caption: Home — AIS Platform Overview
+            Navigate: /sil/
+
+        NavEcosystemHub
+            Type: Link
+            Caption: STF Ecosystem Hub
+            Navigate: /ecosystem/sil/
+
+        NavSTF
+            Type: Link
+            Caption: STF — Semantic Text Format
+            Navigate: /ecosystem/stf/sil/
+
+        NavSIL
+            Type: Link
+            Caption: SIL — Semantic Interface Layer
+            Navigate: /ecosystem/sil-spec/sil/
+
+        NavSTFMemory
+            Type: Link
+            Caption: STF-Memory — Structured Long-Term Agent Memory
+            Navigate: /ecosystem/stf-memory/sil/
+
+        NavSIR
+            Type: Link
+            Caption: SIR — Semantic Intermediate Representation
+            Navigate: /ecosystem/sir/sil/
+
+        NavSIRCompiler
+            Type: Link
+            Caption: SIR Compiler — Self-Hosting SIR-to-WASM Compiler
+            Navigate: /ecosystem/sir-compiler/sil/
+
+        NavMonitoring
+            Type: Link
+            Caption: Commercial Offer — Sir Revizor Continuous Code Security Monitoring
+            Navigate: /monitoring/sil/
+
+        NavCareers
+            Type: Link
+            Caption: Careers &amp; Partnerships — Independent Sales Partner &amp; Business Co-Founder
+            Navigate: /careers/sil/
+
+    ServiceDefinition
+        Type: Section
+        Role: Content
+        Caption: Sir Revizor Continuous Code Security Monitoring
+        Purpose: Core value proposition and workflow of daily execution-verified code monitoring
+
+        WhatItIs
+            Type: Text
+            Caption: Daily Execution-Verified Monitoring Across Your Entire Language Stack
+            Content: Every day we pull the current state of your repository, pin the commit, scan new commits and pull requests across your entire language stack, triage what is new, verify by actual execution, and deliver fix recommendations. Detection is not a verdict: only execution proves it. You receive investigation results, not raw analyzer warnings, and you install or maintain nothing.
+
+        DifferenceFromAuditsAndSAST
+            Type: Text
+            Caption: Difference From One-Off Audits and Noisy SAST
+            Content: One-off audits expire on the next merged pull request, while static analyzers flood developers with false positives. We provide continuous daily coverage where every reported vulnerability is confirmed by a reproducible execution trace, and false alarms are filtered out as Refuted by Execution.
+
+        DeliverablesAndSLA
+            Type: Text
+            Caption: Deliverables, Quiet-Month Report, and 24-Hour SLA
+            Content: Includes continuous commit/PR review across your entire language stack, root-cause and PoC execution trace for every finding, candidates refuted by execution, 24-hour business-day triage SLA on new findings, direct founder communication channel (Telegram/Slack), and a comprehensive Quiet-Month Report even when zero new defects occur (documenting commits checked, triggers refuted by execution, re-checks, and coverage boundaries).
+
+    Pricing
+        Type: Section
+        Role: Content
+        Caption: Subscription Pricing (Monthly, Crypto Supported)
+
+        FoundingClientRate
+            Type: Text
+            Caption: Founding-Client Rate — USD 2,000 (Month 1)
+            Content: USD 2,000 for the first paid month. Evaluate our execution-verified quality on your live codebase and permanently lock in the Standard USD 3,000/month rate forever.
+
+        StandardRate
+            Type: Text
+            Caption: Standard Rate — USD 3,000/month (From Month 2)
+            Content: USD 3,000 per month (locked forever for Founding clients; exact scope depends on codebase size and activity and is fixed in the contract). Flexible month-to-month renewal (auto-renew or explicit monthly consent) with written confirmation for every payment.
+
+    SanitizedSampleReport
+        Type: Section
+        Role: Content
+        Caption: Sanitized Sample Technical Report — ExampleVault.sol (&quot;1-of-N&quot; Demo)
+        Purpose: Illustrative example of an execution-verified finding report
+
+        FindingPassport
+            Type: Text
+            Caption: 1. Finding Passport
+            Content: Repository example-defi-protocol (commit a1b2c3d, branch main), component contracts/vault/ExampleVault.sol — claimAndCompound(uint256 amount, uint256 minShares). Defect Class: Reward Debt Accounting Desynchronization. Severity: Medium. Confirmed via local Foundry execution harness without touching mainnet or public testnets.
+
+        SummaryAndRootCause
+            Type: Text
+            Caption: 2. Summary &amp; Root Cause
+            Content: claimAndCompound allows partial reward compounding (amount &lt;= pending), but resets user.rewardDebt using the full updated user.shares balance as if all pending rewards were consumed. The uncompounded remainder (pending - amount) is silently erased from the user&#x27;s claimable balance and permanently locked in the contract.
+
+        ExecutionTrace
+            Type: Text
+            Caption: 3. Reproducible PoC &amp; Execution Trace
+            Content: Command: forge test --match-test test_ClaimAndCompound_PartialErasesUnclaimedRewards -vvv. With user.shares = 10,000e18 and pending = 500e18, calling claimAndCompound(200e18, 200e18) mints 200e18 shares (user.shares = 10,200e18) and sets user.rewardDebt = 510e18, leaving claimable_after = 0 instead of 300e18. Exactly 300e18 reward tokens (60% of accrued yield) are lost in one valid partial-compound call.
+
+        RefutedByExecution
+            Type: Text
+            Caption: 4. Candidates Refuted by Execution
+            Content: Candidate A (ExampleVault.sol:98 initial deposit rounding) was tested against VIRTUAL_SHARES = 1e6 and VIRTUAL_ASSETS = 1e6, proving any donation attack up to 10,000e18 tokens loses &gt;99.99% of attacker capital (Verdict: SAFE). Candidate B (ExampleVault.sol:211 emergencyWithdraw state ordering) was tested with an ERC-777 callback token, confirming nonReentrant and prior user.shares zeroing at line 206 prevent exploitation (Verdict: SAFE).
+
+        FixAndVerification
+            Type: Text
+            Caption: 5. Fix Recommendation &amp; Post-Fix Verification
+            Content: Compute unpaid = pending - amount and set user.rewardDebt = newBaseline - unpaid. Post-fix test passes and preserves the invariant claimable_before == compounded_amount + claimable_after across 10,000 fuzz runs.
+
+        RemainingTriageCandidates
+            Type: Text
+            Caption: 6. Remaining Candidates in Triage (1-of-N Rule)
+            Content: Candidate #2 in Router.sol (residual ERC-20 allowance after partial multi-hop fill, Medium/Hardening) and Candidate #3 in EpochDistributor.sol (non-strict block.timestamp == epochEnd boundary check, Low/State-transition drift).
+
+    DisclaimerSection
+        Type: Section
+        Role: Content
+        Caption: Straight Talk &amp; Honest Disclaimer
+
+        DisclaimerText
+            Type: Text
+            Caption: Risk Reduction &amp; 3-Month Liability Cap
+            Content: We operate transparently as an individual founder while corporate registration is in progress, issuing written confirmations for every payment. Continuous monitoring is a systematic defect-detection and risk-reduction service, not a guarantee of absolute zero bugs. Contractual liability is capped at 3 months of subscription fees paid.
+
+    ContactSection
+        Type: Section
+        Role: Content
+        Caption: Contacts — Vladimir Sitnikov
+        Purpose: Direct contact channels
+
+        FounderIdentity
+            Type: Text
+            Caption: Architect &amp; Technical Founder
+            Content: Vladimir Sitnikov — Architect &amp; Technical Founder
+
+        EmailCommercial
+            Type: Text
+            Caption: Commercial &amp; Partnerships
+            Content: founder@ais-platform.dev
+
+        EmailSupport
+            Type: Text
+            Caption: Specification &amp; Security
+            Content: support@ais-platform.dev
+
+        TelegramLink
+            Type: Link
+            Caption: Telegram (@Pastalog)
+            Navigate: https://t.me/Pastalog
+
+        GitHubLink
+            Type: Link
+            Caption: GitHub (ais-space)
+            Navigate: https://github.com/ais-space
+
+        LinkedInLink
+            Type: Link
+            Caption: LinkedIn (Vladimir Sitnikov)
+            Navigate: https://www.linkedin.com/in/vladimir-sitnikov-3a61433b5
+</pre>
+</body>
+</html>

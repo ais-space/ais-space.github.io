@@ -1,7 +1,32 @@
-Context
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SIL Layer — /ecosystem/sil-spec/sil/</title>
+  <link rel="alternate" href="../" type="text/html">
+  <style>
+    body {
+      margin: 0;
+      padding: 24px;
+      background: #0b0f17;
+      color: #e6edf7;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 14px;
+      line-height: 1.55;
+    }
+    pre {
+      margin: 0;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+  </style>
+</head>
+<body>
+<pre>Context
     Version: 0.3
     Document: AIS Platform — SIL (Semantic Interface Layer) Overview v1.1.0
-    CanonicalSil: /ecosystem/sil/index.sil
+    CanonicalSil: /ecosystem/sil-spec/sil/
     Language: en
     Origin: System
 
@@ -19,47 +44,47 @@ Page
         NavHome
             Type: Link
             Caption: Home — AIS Platform Overview
-            Navigate: /index.sil
+            Navigate: /sil/
 
         NavEcosystemHub
             Type: Link
             Caption: STF Ecosystem Hub
-            Navigate: /ecosystem/index.sil
+            Navigate: /ecosystem/sil/
 
         NavSTF
             Type: Link
             Caption: STF — Semantic Text Format
-            Navigate: /ecosystem/stf/index.sil
+            Navigate: /ecosystem/stf/sil/
 
         NavSIL
             Type: Link
             Caption: SIL — Semantic Interface Layer
-            Navigate: /ecosystem/sil/index.sil
+            Navigate: /ecosystem/sil-spec/sil/
 
         NavSTFMemory
             Type: Link
             Caption: STF-Memory — Structured Long-Term Agent Memory
-            Navigate: /ecosystem/stf-memory/index.sil
+            Navigate: /ecosystem/stf-memory/sil/
 
         NavSIR
             Type: Link
             Caption: SIR — Semantic Intermediate Representation
-            Navigate: /ecosystem/sir/index.sil
+            Navigate: /ecosystem/sir/sil/
 
         NavSIRCompiler
             Type: Link
             Caption: SIR Compiler — Self-Hosting SIR-to-WASM Compiler
-            Navigate: /ecosystem/sir-compiler/index.sil
+            Navigate: /ecosystem/sir-compiler/sil/
 
         NavMonitoring
             Type: Link
             Caption: Commercial Offer — Sir Revizor Continuous Code Security Monitoring
-            Navigate: /monitoring/index.sil
+            Navigate: /monitoring/sil/
 
         NavCareers
             Type: Link
-            Caption: Careers & Partnerships — Independent Sales Partner & Business Co-Founder
-            Navigate: /careers/index.sil
+            Caption: Careers &amp; Partnerships — Independent Sales Partner &amp; Business Co-Founder
+            Navigate: /careers/sil/
 
     SpecificationOverview
         Type: Section
@@ -70,7 +95,7 @@ Page
         CoreMechanism
             Type: Text
             Caption: Agent Web Navigation Without HTML/DOM or JS
-            Content: SIL extends STF with an application vocabulary for web pages and interfaces. Agents discover the SIL endpoint via the HTML head link (rel="sil") or visible SIL badges and traverse the site deterministically without rendering DOM trees or running client-side scripts.
+            Content: SIL extends STF with an application vocabulary for web pages and interfaces. Agents discover the SIL endpoint via the HTML head link (rel=&quot;sil&quot;) or visible SIL badges and traverse the site deterministically without rendering DOM trees or running client-side scripts.
 
         ConformanceProfiles
             Type: Section
@@ -79,33 +104,33 @@ Page
 
             Profile1
                 Type: Text
-                Caption: Profile 1 — Static Content & Navigation
+                Caption: Profile 1 — Static Content &amp; Navigation
                 Content: Read-only semantic page structure, explicit Purpose descriptors, and cross-page Navigate links.
 
             Profile2
                 Type: Text
-                Caption: Profile 2 — Structured Discovery & Indexing
+                Caption: Profile 2 — Structured Discovery &amp; Indexing
                 Content: Canonical metadata, typed section roles, and deterministic entity summaries for agent retrieval.
 
             Profile3
                 Type: Text
-                Caption: Profile 3 — Parameterized Queries & Forms
+                Caption: Profile 3 — Parameterized Queries &amp; Forms
                 Content: Typed input parameters, constraints, and query targets without DOM form scraping.
 
             Profile4
                 Type: Text
-                Caption: Profile 4 — Stateful Actions & Transactions
+                Caption: Profile 4 — Stateful Actions &amp; Transactions
                 Content: Explicit preconditions, state transitions, and confirmation semantics for interactive workflows.
 
             Profile5
                 Type: Text
-                Caption: Profile 5 — Multi-Turn Agent Collaboration & Trust Isolation
+                Caption: Profile 5 — Multi-Turn Agent Collaboration &amp; Trust Isolation
                 Content: Full interactive sessions separating authoritative interface semantics (Origin: System) from untrusted user content (Origin: UserContent).
 
         LiveExample
             Type: Link
             Caption: Live SIL Representation of This Page
-            Navigate: /ecosystem/sil/index.sil
+            Navigate: /ecosystem/sil-spec/sil/
 
         RepositoryLink
             Type: Link
@@ -120,17 +145,17 @@ Page
 
         FounderIdentity
             Type: Text
-            Caption: Architect & Technical Founder
-            Content: Vladimir Sitnikov — Architect & Technical Founder
+            Caption: Architect &amp; Technical Founder
+            Content: Vladimir Sitnikov — Architect &amp; Technical Founder
 
         EmailCommercial
             Type: Text
-            Caption: Commercial & Partnerships
+            Caption: Commercial &amp; Partnerships
             Content: founder@ais-platform.dev
 
         EmailSupport
             Type: Text
-            Caption: Specification & Security
+            Caption: Specification &amp; Security
             Content: support@ais-platform.dev
 
         TelegramLink
@@ -147,3 +172,6 @@ Page
             Type: Link
             Caption: LinkedIn (Vladimir Sitnikov)
             Navigate: https://www.linkedin.com/in/vladimir-sitnikov-3a61433b5
+</pre>
+</body>
+</html>

@@ -1,7 +1,7 @@
 Context
     Version: 0.3
     Document: AIS Platform — STF Ecosystem Hub v1.1.0
-    CanonicalSil: /ecosystem/index.sil
+    CanonicalSil: /ecosystem/sil/
     Language: en
     Origin: System
 
@@ -19,47 +19,47 @@ Page
         NavHome
             Type: Link
             Caption: Home — AIS Platform Overview
-            Navigate: /index.sil
+            Navigate: /sil/
 
         NavEcosystemHub
             Type: Link
             Caption: STF Ecosystem Hub
-            Navigate: /ecosystem/index.sil
+            Navigate: /ecosystem/sil/
 
         NavSTF
             Type: Link
             Caption: STF — Semantic Text Format
-            Navigate: /ecosystem/stf/index.sil
+            Navigate: /ecosystem/stf/sil/
 
         NavSIL
             Type: Link
             Caption: SIL — Semantic Interface Layer
-            Navigate: /ecosystem/sil/index.sil
+            Navigate: /ecosystem/sil-spec/sil/
 
         NavSTFMemory
             Type: Link
             Caption: STF-Memory — Structured Long-Term Agent Memory
-            Navigate: /ecosystem/stf-memory/index.sil
+            Navigate: /ecosystem/stf-memory/sil/
 
         NavSIR
             Type: Link
             Caption: SIR — Semantic Intermediate Representation
-            Navigate: /ecosystem/sir/index.sil
+            Navigate: /ecosystem/sir/sil/
 
         NavSIRCompiler
             Type: Link
             Caption: SIR Compiler — Self-Hosting SIR-to-WASM Compiler
-            Navigate: /ecosystem/sir-compiler/index.sil
+            Navigate: /ecosystem/sir-compiler/sil/
 
         NavMonitoring
             Type: Link
             Caption: Commercial Offer — Sir Revizor Continuous Code Security Monitoring
-            Navigate: /monitoring/index.sil
+            Navigate: /monitoring/sil/
 
         NavCareers
             Type: Link
             Caption: Careers & Partnerships — Independent Sales Partner & Business Co-Founder
-            Navigate: /careers/index.sil
+            Navigate: /careers/sil/
 
     Thesis
         Type: Section
@@ -83,35 +83,35 @@ Page
             Role: Content
             Caption: 1. STF — Semantic Text Format
             Content: The core of the ecosystem: an explicit semantic section tree, grammar-enforced trust zones (System, UserContent), native EBNF syntactic protection against prompt injection, and reduced inference cost for smaller models.
-            Navigate: /ecosystem/stf/index.sil
+            Navigate: /ecosystem/stf/sil/
 
         ComponentSIL
             Type: Section
             Role: Content
             Caption: 2. SIL — Semantic Interface Layer
             Content: Application extension of STF enabling AI agents to navigate and interact with websites without parsing raw HTML/DOM or executing JavaScript, organized into 5 conformance profiles.
-            Navigate: /ecosystem/sil/index.sil
+            Navigate: /ecosystem/sil-spec/sil/
 
         ComponentSTFMemory
             Type: Section
             Role: Content
             Caption: 3. STF-Memory — Structured Long-Term Agent Memory
             Content: Structural state model for long-horizon agent memory featuring explicit conflict tracking, trust provenance, and views/projections instead of flat append-only logs.
-            Navigate: /ecosystem/stf-memory/index.sil
+            Navigate: /ecosystem/stf-memory/sil/
 
         ComponentSIR
             Type: Section
             Role: Content
             Caption: 4. SIR — Semantic Intermediate Representation
             Content: Executable semantic intermediate representation built on STF for coding agents and verifiable compilation to WebAssembly.
-            Navigate: /ecosystem/sir/index.sil
+            Navigate: /ecosystem/sir/sil/
 
         ComponentSIRCompiler
             Type: Section
             Role: Content
             Caption: 5. SIR Compiler — Self-Hosting SIR-to-WASM Compiler
             Content: Self-compiling compiler written in SIR itself (~103 KB binary, proven byte-for-byte self-compilation fixpoint, 253/253 tests), demonstrating structural durability under aggressive context autocompression.
-            Navigate: /ecosystem/sir-compiler/index.sil
+            Navigate: /ecosystem/sir-compiler/sil/
 
     ContactSection
         Type: Section

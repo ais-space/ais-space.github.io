@@ -1,7 +1,7 @@
 Context
     Version: 0.3
     Document: AIS Platform — Home & Overview v1.1.0
-    CanonicalSil: /index.sil
+    CanonicalSil: /sil/
     Language: en
     Origin: System
 
@@ -19,47 +19,47 @@ Page
         NavHome
             Type: Link
             Caption: Home — AIS Platform Overview
-            Navigate: /index.sil
+            Navigate: /sil/
 
         NavEcosystemHub
             Type: Link
             Caption: STF Ecosystem Hub
-            Navigate: /ecosystem/index.sil
+            Navigate: /ecosystem/sil/
 
         NavSTF
             Type: Link
             Caption: STF — Semantic Text Format
-            Navigate: /ecosystem/stf/index.sil
+            Navigate: /ecosystem/stf/sil/
 
         NavSIL
             Type: Link
             Caption: SIL — Semantic Interface Layer
-            Navigate: /ecosystem/sil/index.sil
+            Navigate: /ecosystem/sil-spec/sil/
 
         NavSTFMemory
             Type: Link
             Caption: STF-Memory — Structured Long-Term Agent Memory
-            Navigate: /ecosystem/stf-memory/index.sil
+            Navigate: /ecosystem/stf-memory/sil/
 
         NavSIR
             Type: Link
             Caption: SIR — Semantic Intermediate Representation
-            Navigate: /ecosystem/sir/index.sil
+            Navigate: /ecosystem/sir/sil/
 
         NavSIRCompiler
             Type: Link
             Caption: SIR Compiler — Self-Hosting SIR-to-WASM Compiler
-            Navigate: /ecosystem/sir-compiler/index.sil
+            Navigate: /ecosystem/sir-compiler/sil/
 
         NavMonitoring
             Type: Link
             Caption: Commercial Offer — Sir Revizor Continuous Code Security Monitoring
-            Navigate: /monitoring/index.sil
+            Navigate: /monitoring/sil/
 
         NavCareers
             Type: Link
             Caption: Careers & Partnerships — Independent Sales Partner & Business Co-Founder
-            Navigate: /careers/index.sil
+            Navigate: /careers/sil/
 
     PlatformOverview
         Type: Section
@@ -72,21 +72,21 @@ Page
             Role: Content
             Caption: STF Semantic Ecosystem for AI Agents
             Content: Open-source specifications and self-hosting compiler infrastructure built for deterministic machine comprehension rather than human visual heuristics.
-            Navigate: /ecosystem/index.sil
+            Navigate: /ecosystem/sil/
 
         PillarMonitoring
             Type: Section
             Role: Content
             Caption: Sir Revizor Continuous Code Security Monitoring
             Content: Daily repository monitoring across your entire language stack. Every reported vulnerability is confirmed by actual execution with a reproducible Proof-of-Concept trace, and false-positive static alerts refuted by execution are documented transparently.
-            Navigate: /monitoring/index.sil
+            Navigate: /monitoring/sil/
 
         PillarCareers
             Type: Section
             Role: Content
             Caption: Independent Sales Partners & Business Co-Founder Track
             Content: B2B cybersecurity sales partners earn 20% recurring revenue share for as long as they service the client account, equipped with pre-qualified leads and free 1-of-N technical demos. Top performers proven in real client work are considered for Business Co-Founder.
-            Navigate: /careers/index.sil
+            Navigate: /careers/sil/
 
     EcosystemSummary
         Type: Section
@@ -99,35 +99,35 @@ Page
             Role: Content
             Caption: STF — Semantic Text Format
             Content: Core structural format with an explicit section tree, grammar-level trust zones (System, UserContent), native EBNF syntactic protection against prompt injection, and lower inference overhead for smaller models.
-            Navigate: /ecosystem/stf/index.sil
+            Navigate: /ecosystem/stf/sil/
 
         CardSIL
             Type: Section
             Role: Content
             Caption: SIL — Semantic Interface Layer
             Content: Application extension of STF for AI agent web navigation without parsing raw HTML/DOM or executing JavaScript, featuring 5 conformance profiles.
-            Navigate: /ecosystem/sil/index.sil
+            Navigate: /ecosystem/sil-spec/sil/
 
         CardSTFMemory
             Type: Section
             Role: Content
             Caption: STF-Memory — Structured Agent Memory
             Content: Long-term structural memory model for agents with explicit conflict tracking, trust provenance, and projections instead of flat logs, preventing memory degradation across long multi-agent runs.
-            Navigate: /ecosystem/stf-memory/index.sil
+            Navigate: /ecosystem/stf-memory/sil/
 
         CardSIR
             Type: Section
             Role: Content
             Caption: SIR — Semantic Intermediate Representation
             Content: Executable semantic intermediate representation built on STF for AI coding agents and verifiable translation to WebAssembly.
-            Navigate: /ecosystem/sir/index.sil
+            Navigate: /ecosystem/sir/sil/
 
         CardSIRCompiler
             Type: Section
             Role: Content
             Caption: SIR Compiler — Self-Hosting SIR-to-WASM Compiler
             Content: Self-compiling compiler written in SIR itself (~103 KB binary, proven byte-for-byte self-compilation fixpoint, 253/253 tests passing).
-            Navigate: /ecosystem/sir-compiler/index.sil
+            Navigate: /ecosystem/sir-compiler/sil/
 
     ContactSection
         Type: Section
