@@ -69,13 +69,13 @@ Page
 
         CommissionTerms
             Type: Text
-            Caption: 20% Recurring Revenue Share
-            Content: Earn 20% recurring revenue share from all payments of every client you bring in, for as long as you manage the commercial relationship with that client account.
+            Caption: 20% Recurring Revenue Share & Written Partner Terms
+            Content: Under a written Independent Sales Agent Agreement signed before onboarding, partners earn 20% recurring revenue share from all net collected payments of every client they bring in (paid in crypto with written txid confirmation), for as long as they perform four concrete commercial servicing duties: (1) monthly renewal and payment collection follow-up, (2) commercial upsells when repository scope expands, (3) collecting feedback and reference permissions, and (4) live English voice communication with the client when needed. Commission stops only if the partner abandons the account (60 days of unexcused silence, client request for a replacement manager, or voluntary exit with 14-day handover).
 
         PreQualifiedLeadsAndDemo
             Type: Text
-            Caption: Pre-Qualified Companies, Free Live-Code Demo & Ready Playbook
-            Content: Partners receive pre-qualified companies with already identified code defects, a ready-to-use sales playbook, and a free demo (one complete technical breakdown on the prospect's live code sent directly by the founder to the client's official security contact).
+            Caption: Pre-Qualified Public Open-Source Repositories, Free Demo & Playbook
+            Content: Partners receive batches of 10-15 pre-qualified companies whose public open-source GitHub repositories were evaluated locally on isolated forks under coordinated vulnerability disclosure rules (never touching production systems or unauthorized private code). Includes a ready-to-use sales playbook and a free 1-of-N technical demo sent directly by the technical founder to the client's official security contact (sensitive bug details are never handed to sales reps).
 
         PartnerRequirements
             Type: Text

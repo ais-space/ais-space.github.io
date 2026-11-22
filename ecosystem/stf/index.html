@@ -69,9 +69,9 @@
         </div>
 
         <div class="card card-highlight">
-          <h3>Syntactic Prompt-Injection Defense</h3>
+          <h3>Code-Enforced Prompt-Injection Defense via Grammar</h3>
           <p>
-            Because trust zones and structural boundaries are enforced at the EBNF grammar syntax level rather than by fragile natural-language delimiters, untrusted input placed inside a <code>UserContent</code> subtree cannot syntactically escalate privileges or inject top-level <code>System</code> instructions.
+            We do not rely on an LLM "obeying" prompt tags. Because STF is strictly machine-readable and trivially parsed, and an untrusted <code>UserContent</code> block cannot syntactically escape its indentation subtree or forge a <code>System</code> node, <strong>deterministic host code easily filters and strips unauthorized branches before they ever reach the agent or execution layer</strong>. That combination — strict EBNF structural confinement plus deterministic code filtering — provides real protection.
           </p>
         </div>
 

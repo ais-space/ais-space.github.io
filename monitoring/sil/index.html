@@ -158,15 +158,31 @@ Page
             Caption: 6. Remaining Candidates in Triage (1-of-N Rule)
             Content: Candidate #2 in Router.sol (residual ERC-20 allowance after partial multi-hop fill, Medium/Hardening) and Candidate #3 in EpochDistributor.sol (non-strict block.timestamp == epochEnd boundary check, Low/State-transition drift).
 
+        RustWasmSampleReport
+            Type: Text
+            Caption: Sample Report #2 — Rust / WebAssembly Runtime (descriptor_parser.rs)
+            Content: Component crates/cli-support/src/descriptor_parser.rs (commit f4e8b12). Defect Class: Unhandled Boundary Value Causing Host Process Panic. Severity: Medium/High, confirmed via cargo test --release with a minimal 11-byte WASM guest payload exporting 0xFFFFFFFF, which hits panic!(&quot;unknown descriptor: {other}&quot;) and terminates the host worker with exit code 101. Replacing panic! with bail! restores clean Result::Err handling across 50,000 fuzzed streams. Refuted by Execution in the same crate: a static warning on memory.get_region(ptr, len) was refuted by proving ptr.checked_add(len) bounds-checking rejects overflow inputs before slice creation.
+
+    CoordinatedDisclosurePortfolio
+        Type: Section
+        Role: Content
+        Caption: Coordinated Disclosure Portfolio &amp; Pre-Embargo Anonymization (Case #NNN)
+        Purpose: Ethical local-only research on public repositories and strict pre-embargo privacy
+
+        DisclosurePolicyAndBoard
+            Type: Text
+            Caption: Numbered Anonymized Board (github.com/ais-space/disclosures)
+            Content: All proactive evaluation is conducted exclusively on public open-source GitHub repositories in a local isolated environment under Coordinated Vulnerability Disclosure rules (never touching live production systems). Critical funds-at-risk bugs are disclosed immediately and free of charge. While an embargo is active, we never disclose even the project name publicly — pending cases are tracked sequentially at https://github.com/ais-space/disclosures as Case #001 (Rust/WASM Plug-in Runtime SDK, embargo since 2026-10-16), Case #002 (Rust/WASM Host Library, embargo since 2026-10-22), and Case #003 (Solidity Smart-Contract Library, in work). After embargo expiration, each case is either published with the vendor patch link or closed permanently with the notice that at the maintainer&#x27;s request project identity and details remain private out of respect for confidentiality. Commercial monitoring subscribers are covered by mutual NDA with zero public disclosure.
+
     DisclaimerSection
         Type: Section
         Role: Content
-        Caption: Straight Talk &amp; Honest Disclaimer
+        Caption: Data Handling, Mutual NDA &amp; Service Disclaimer
 
         DisclaimerText
             Type: Text
-            Caption: Risk Reduction &amp; 3-Month Liability Cap
-            Content: We operate transparently as an individual founder while corporate registration is in progress, issuing written confirmations for every payment. Continuous monitoring is a systematic defect-detection and risk-reduction service, not a guarantee of absolute zero bugs. Contractual liability is capped at 3 months of subscription fees paid.
+            Caption: Mutual NDA, Read-Only Access, Operational Security &amp; 3-Month Liability Cap
+            Content: Governed by a written agreement with mutual NDA before onboarding. We use read-only repository access only and never request private keys, seed phrases, or deployment secrets; artifacts are stored in isolated per-client encrypted storage with hardware-key protection. Operates transparently through the individual technical founder (24-hour business-day triage SLA, month-to-month billing). Continuous monitoring is a systematic risk-reduction service, not a guarantee of absolute zero bugs; total contractual liability is capped at 3 months of subscription fees paid.
 
     ContactSection
         Type: Section

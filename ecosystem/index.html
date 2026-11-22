@@ -60,7 +60,7 @@
         </p>
         <ul class="clean">
           <li><strong>No Visual Guesswork:</strong> Instead of reverse-engineering <code>&lt;div&gt;</code> hierarchies and JavaScript bundles, an agent reads explicit intent, roles, actions, and navigation targets directly from the document grammar.</li>
-          <li><strong>Grammar-Enforced Trust Boundaries:</strong> Data provenance and trust zones (such as <code>System</code> vs. <code>UserContent</code>) are syntactic primitives in the EBNF grammar, eliminating ambiguity between instructions and untrusted payloads.</li>
+          <li><strong>Grammar-Enforced Trust Boundaries &amp; Deterministic Code Filtering:</strong> Data provenance and trust zones (such as <code>System</code> vs. <code>UserContent</code>) are syntactic primitives in the EBNF grammar. Because the format is strictly machine-readable and trivially parsed, deterministic host code filters and strips unauthorized branches before they reach the agent, providing real code-enforced protection against prompt injection.</li>
           <li><strong>Resilience Under Context Compression:</strong> Because every node carries self-contained semantic keys rather than position-sensitive punctuation, even smaller models and sessions undergoing repeated context autocompression preserve structural soundness.</li>
         </ul>
       </div>
@@ -71,7 +71,7 @@
       <div class="card">
         <h3>1. STF — Semantic Text Format (Foundation)</h3>
         <p>
-          The core structural language of the ecosystem. Represents documents as an explicit tree of named semantic sections with built-in trust zones (<code>System</code>, <code>UserContent</code>, and others), providing native syntactic defense against prompt injections at the EBNF grammar level and significantly reducing inference cost for smaller language models.
+          The core structural language of the ecosystem. Represents documents as an explicit tree of named semantic sections with built-in trust zones (<code>System</code>, <code>UserContent</code>, and others). Because the EBNF grammar prevents untrusted nodes from escaping their subtree and is trivially parsed, deterministic host code can filter out unauthorized data before it ever reaches the agent — delivering real code-enforced prompt-injection defense alongside lower inference cost for smaller language models.
         </p>
         <p>
           <a class="btn" href="/ecosystem/stf/">Explore STF →</a>

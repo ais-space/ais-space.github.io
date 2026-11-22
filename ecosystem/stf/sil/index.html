@@ -104,8 +104,8 @@ Page
 
         PromptInjectionDefense
             Type: Text
-            Caption: Native EBNF Syntactic Defense Against Prompt Injection
-            Content: Because trust boundaries are enforced at the EBNF grammar syntax level, untrusted text inside a UserContent branch cannot syntactically escape its subtree or forge System instructions.
+            Caption: Code-Enforced Prompt-Injection Defense Enabled by EBNF Grammar
+            Content: We do not feed everything into an LLM and hope it obeys tags. Because STF is strictly machine-readable and trivially parsed, and untrusted text inside a UserContent branch cannot syntactically escape its subtree or forge a System node, deterministic host code filters and strips unauthorized data or instructions before they ever reach the agent.
 
         InferenceEfficiency
             Type: Text

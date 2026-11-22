@@ -199,18 +199,71 @@
           <li><strong>[Candidate #3 — <code>EpochDistributor.sol</code>]:</strong> non-strict boundary check (<code>block.timestamp == epochEnd</code>) creates a single-block window where reward snapshotting and epoch counter increment can desynchronize (Low / State-transition drift).</li>
         </ul>
       </div>
+
+      <div class="card card-highlight">
+        <h3>Sample Report #2 — Rust / WebAssembly Runtime (<code>descriptor_parser.rs</code>)</h3>
+        <p>
+          To illustrate multi-language coverage beyond EVM smart contracts, below is a condensed execution-verified report from a Rust/WASM host-bridge component:
+        </p>
+        <table class="meta-table">
+          <tbody>
+            <tr>
+              <th>Component / Commit</th>
+              <td><code>crates/cli-support/src/descriptor_parser.rs</code> (commit <code>f4e8b12</code>) — guest export stream decoder</td>
+            </tr>
+            <tr>
+              <th>Defect Class</th>
+              <td>Unhandled Boundary Value Causing Host Process Panic (Denial of Service across Worker Thread)</td>
+            </tr>
+            <tr>
+              <th>Severity &amp; Status</th>
+              <td><strong>Medium / High</strong> — Confirmed by isolated execution harness (<code>cargo test --release</code>); exit code <code>101</code> panic reproduced with a minimal 11-byte WASM guest payload.</td>
+            </tr>
+          </tbody>
+        </table>
+        <p><strong>Root Cause &amp; Code Snippet:</strong> When decoding the <code>u32</code> type-descriptor stream emitted by a compiled WASM guest module, an unknown or malformed tag hits an unconditional <code>panic!("unknown descriptor: {other}")</code> arm instead of returning a recoverable <code>Result::Err</code>, crashing the entire host worker process:</p>
+<pre><code>pub fn decode_descriptor(stream: &amp;mut DescriptorStream) -&gt; Result&lt;Descriptor, Error&gt; {
+    match stream.next_u32()? {
+        0x01 =&gt; Ok(Descriptor::I32),
+        0x02 =&gt; Ok(Descriptor::I64),
+        other =&gt; panic!("unknown descriptor: {other}"), // &lt;-- BUG: untrusted guest u32 crashes host process
+    }
+}</code></pre>
+        <p><strong>Execution Proof &amp; Fix Verification:</strong> Passing a minimal 11-byte WASM module exporting <code>0xFFFFFFFF</code> terminates the host process with <code>thread 'main' panicked ... unknown descriptor: 4294967295 (exit code 101)</code>. Replacing the panic arm with <code>bail!("unknown descriptor value: {other}")</code> restores graceful error handling (<code>Err(InvalidDescriptor)</code>) across 50,000 fuzzed descriptor streams. <strong>Refuted by Execution in the same crate:</strong> a static warning flagging potential out-of-bounds slice indexing in <code>memory.get_region(ptr, len)</code> was refuted by execution testing — checked arithmetic <code>ptr.checked_add(len)</code> against <code>memory.data_size()</code> cleanly rejects overflow inputs before slice construction.</p>
+      </div>
     </section>
 
     <section>
-      <h2>Straight Talk &amp; Service Disclaimer</h2>
+      <h2>Coordinated Disclosure Portfolio &amp; Pre-Embargo Anonymization Rule</h2>
       <div class="card">
-        <h3>Operational Transparency &amp; Liability Cap</h3>
+        <h3>Public Disclosure Board: <a class="repo-link" href="https://github.com/ais-space/disclosures" target="_blank" rel="noopener">github.com/ais-space/disclosures →</a></h3>
         <p>
-          <strong>Straight Talk:</strong> The service currently operates directly through the individual founder while formal company registration is being completed, after which agreements transition to the corporate entity. Every payment receives a written confirmation. We do not invent fictitious client logos: we prove our value directly on your code.
+          All proactive research and pre-qualification of prospective leads is performed <strong>exclusively on public open-source GitHub repositories in a local isolated environment</strong> under strict Coordinated Vulnerability Disclosure (CVD) rules — never interacting with live production deployments or unauthorized private code. Any critical defect putting live user funds at immediate risk is reported to the project maintainer immediately and free of charge with zero commercial conditions.
         </p>
         <p>
-          <strong>Honest Disclaimer:</strong> Sir Revizor Continuous Code Security Monitoring is a systematic defect-detection and risk-reduction service, not a guarantee of absolute zero defects. Total contractual liability is capped at <strong>3 months of subscription fees paid</strong> (full terms specified in the monitoring agreement).
+          <strong>Why Active Cases Are Numbered (<code>Case #001</code>, <code>Case #002</code>, ...):</strong> Because even revealing that an unpatched vulnerability exists in a named project can alert attackers before a patch is released, we never publish a project's name while an embargo is running. On our public board (<a class="repo-link" href="https://github.com/ais-space/disclosures" target="_blank" rel="noopener">github.com/ais-space/disclosures</a>), pending evaluations are tracked strictly by sequential number and technology domain (e.g., <em>Case #001 — Rust/WASM Plug-in Runtime SDK</em>, <em>Case #002 — Rust/WASM Host Library</em>, <em>Case #003 — Solidity Smart-Contract Library</em>).
         </p>
+        <p>
+          Once an embargo period concludes, each numbered case resolves to one of two permanent records:
+        </p>
+        <ul class="clean">
+          <li><strong>Public Resolution (with vendor patch):</strong> <em>"Case #NNN is project [Name]; vulnerability [Class] was identified and fixed"</em> — with links to the upstream patch and full reproduction report.</li>
+          <li><strong>Confidential Resolution (at maintainer's request):</strong> <em>"Case #NNN — Despite expiration of the embargo period, at the maintainer's request we do not disclose the project name or technical details, respecting their right to confidentiality."</em></li>
+          <li><strong>Commercial Monitoring Subscribers:</strong> For paying monitoring clients, all findings are governed by mutual NDA and are never published on the disclosure board.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Data Handling, Mutual NDA &amp; Service Disclaimer</h2>
+      <div class="card">
+        <h3>Operational Security, Confidentiality &amp; 3-Month Liability Cap</h3>
+        <ul class="clean">
+          <li><strong>Mutual NDA &amp; Written Contract:</strong> Every subscription is governed by a written monitoring agreement with two-way confidentiality (protecting your code/findings and our methodology) signed before onboarding.</li>
+          <li><strong>Read-Only Code Access &amp; Encrypted Storage:</strong> We require only read-only access to the agreed repository. We never request or accept private keys, seed phrases, deployment credentials, or production secrets. Findings and traces are stored in isolated per-client encrypted storage with hardware-key protection and minimal retention.</li>
+          <li><strong>Straight Talk on Structure &amp; Continuity:</strong> The service currently operates directly through the individual technical founder while formal corporate registration is completed, with a realistic <strong>24-hour business-day triage SLA</strong> (no fake 24/7 call-center claims) and month-to-month billing.</li>
+          <li><strong>Honest Disclaimer &amp; Liability Cap:</strong> Continuous monitoring materially reduces risk through systematic detection and execution verification, but no tool or audit can guarantee absolute zero defects. Total contractual liability is capped at <strong>3 months of subscription fees paid</strong>.</li>
+        </ul>
       </div>
     </section>
 
