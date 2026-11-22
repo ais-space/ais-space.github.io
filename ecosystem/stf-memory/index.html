@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>STF-Memory — Structured Long-Term Agent Memory | AIS Platform</title>
+  <meta name="description" content="STF-Memory: structural long-term memory for AI agents with an explicit state model, conflict recording, trust provenance, and projections instead of flat logs — preventing memory degradation in long multi-agent runs.">
+  <link rel="sil" href="./index.sil" type="text/sil">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <div class="container">
+    <nav class="topbar" aria-label="Main navigation">
+      <a class="brand" href="/">AIS <span>Platform</span></a>
+      <div class="site-nav">
+        <a href="/">Home</a>
+        <a class="active" href="/ecosystem/">STF Ecosystem</a>
+        <a href="/monitoring/">Code Monitoring</a>
+        <a href="/careers/">Careers &amp; Partners</a>
+      </div>
+    </nav>
+
+    <div class="subnav" aria-label="Ecosystem components">
+      <span class="label">Ecosystem:</span>
+      <a href="/ecosystem/">Hub</a>
+      <a href="/ecosystem/stf/">STF</a>
+      <a href="/ecosystem/sil/">SIL</a>
+      <a class="active" href="/ecosystem/stf-memory/">STF-Memory</a>
+      <a href="/ecosystem/sir/">SIR</a>
+      <a href="/ecosystem/sir-compiler/">SIR Compiler</a>
+    </div>
+
+    <div class="sil-banner">
+      <span><strong>AI Agent Interface (SIL v0.3):</strong> Direct machine-readable semantic layer for this page.</span>
+      <a class="sil-link-btn" href="./index.sil">SIL Layer for AI Agents: /ecosystem/stf-memory/index.sil →</a>
+    </div>
+
+    <header class="hero">
+      <div class="badge-row">
+        <span class="badge">STF Ecosystem · Long-Horizon Agent Memory</span>
+        <a class="badge" href="./index.sil">SIL Layer: /ecosystem/stf-memory/index.sil</a>
+      </div>
+      <h1>STF-Memory — Structured Long-Term Agent Memory</h1>
+      <p class="subtitle">
+        A structural state model built on STF that replaces flat append-only conversation logs with explicit state nodes, conflict recording, trust provenance, and deterministic projections — preventing memory degradation across long-running multi-agent workflows.
+      </p>
+      <div class="nav-links">
+        <a class="btn btn-primary" href="https://github.com/ais-space/stf-memory" target="_blank" rel="noopener">GitHub: github.com/ais-space/stf-memory →</a>
+        <a class="btn" href="/ecosystem/sir/">Next: SIR →</a>
+        <a class="btn" href="./index.sil">Read .SIL Interface</a>
+      </div>
+    </header>
+
+    <section>
+      <h2>Why Flat Transcript Logs Fail in Long Runs</h2>
+      <div class="card card-highlight">
+        <h3>From Unstructured Chat History to a Deterministic State Model</h3>
+        <p>
+          Most agent frameworks treat "memory" as either a growing transcript of chat messages or a bag of vector embeddings retrieved by cosine similarity. Over long sessions or multi-agent handoffs, contradictory observations pile up, outdated hypotheses look identical to verified facts, and lossy summarization silently corrupts critical state.
+        </p>
+        <p>
+          <strong>STF-Memory</strong> models agent memory as an explicit, versioned STF state tree rather than a chronological stream of prose.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Key Architectural Mechanisms</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Explicit Conflict Recording</h3>
+          <p>
+            When two agents, tool outputs, or observations disagree, STF-Memory does not silently overwrite the older entry or leave contradictory lines buried in a log. Conflicts are recorded as first-class semantic nodes linking the competing claims, their evidence, and their resolution status.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Trust Provenance &amp; Authority Scopes</h3>
+          <p>
+            Every memory node preserves its origin and verification level — distinguishing human-approved invariants, execution-verified facts, agent hypotheses, and untrusted external inputs so low-trust data cannot pollute core state.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Focused Projections Instead of Log Dumps</h3>
+          <p>
+            Rather than feeding an agent the entire historical store on every turn, STF-Memory supports deterministic projections: compact, task-specific views of active state, open conflicts, and pending objectives tailored to the subagent's exact role.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Multi-Agent Stability Over Long Horizons</h3>
+          <p>
+            By separating durable state, superseded records, and unresolved conflicts in the grammar itself, multi-agent pipelines run across hundreds of iterations and session handoffs without progressive memory drift.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Specification Repository</h2>
+      <div class="card">
+        <h3>Open-Source STF-Memory Specification</h3>
+        <p>
+          Explore the full STF-Memory state model, conflict schemas, and projection rules in the official repository:
+        </p>
+        <p>
+          <a class="btn btn-primary" href="https://github.com/ais-space/stf-memory" target="_blank" rel="noopener">https://github.com/ais-space/stf-memory →</a>
+          <a class="btn" href="/ecosystem/">Back to Ecosystem Hub</a>
+        </p>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-grid">
+        <div>
+          <strong>Vladimir Sitnikov — Architect &amp; Technical Founder</strong><br>
+          AIS Platform (<a class="repo-link" href="https://ais-platform.dev">ais-platform.dev</a>)<br>
+          SIL Interface for this page: <a class="repo-link" href="./index.sil">/ecosystem/stf-memory/index.sil</a>
+        </div>
+        <div>
+          Commercial &amp; Partnerships: <a class="repo-link" href="mailto:founder@ais-platform.dev">founder@ais-platform.dev</a><br>
+          Specification &amp; Security: <a class="repo-link" href="mailto:support@ais-platform.dev">support@ais-platform.dev</a>
+        </div>
+        <div>
+          Telegram: <a class="repo-link" href="https://t.me/Pastalog" target="_blank" rel="noopener">@Pastalog</a> (<a class="repo-link" href="https://t.me/Pastalog" target="_blank" rel="noopener">https://t.me/Pastalog</a>)<br>
+          GitHub: <a class="repo-link" href="https://github.com/ais-space" target="_blank" rel="noopener">https://github.com/ais-space</a><br>
+          LinkedIn: <a class="repo-link" href="https://www.linkedin.com/in/vladimir-sitnikov-3a61433b5" target="_blank" rel="noopener">https://www.linkedin.com/in/vladimir-sitnikov-3a61433b5</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

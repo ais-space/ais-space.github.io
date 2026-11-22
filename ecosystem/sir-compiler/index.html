@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SIR Compiler — Self-Hosting SIR-to-WASM Compiler | AIS Platform</title>
+  <meta name="description" content="SIR Compiler: self-compiling SIR-to-WASM compiler written in SIR itself (~103 KB binary, proven byte-for-byte self-compilation fixpoint, 253/253 tests) — practical proof of SIR's resilience across context autocompressions.">
+  <link rel="sil" href="./index.sil" type="text/sil">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <div class="container">
+    <nav class="topbar" aria-label="Main navigation">
+      <a class="brand" href="/">AIS <span>Platform</span></a>
+      <div class="site-nav">
+        <a href="/">Home</a>
+        <a class="active" href="/ecosystem/">STF Ecosystem</a>
+        <a href="/monitoring/">Code Monitoring</a>
+        <a href="/careers/">Careers &amp; Partners</a>
+      </div>
+    </nav>
+
+    <div class="subnav" aria-label="Ecosystem components">
+      <span class="label">Ecosystem:</span>
+      <a href="/ecosystem/">Hub</a>
+      <a href="/ecosystem/stf/">STF</a>
+      <a href="/ecosystem/sil/">SIL</a>
+      <a href="/ecosystem/stf-memory/">STF-Memory</a>
+      <a href="/ecosystem/sir/">SIR</a>
+      <a class="active" href="/ecosystem/sir-compiler/">SIR Compiler</a>
+    </div>
+
+    <div class="sil-banner">
+      <span><strong>AI Agent Interface (SIL v0.3):</strong> Direct machine-readable semantic layer for this page.</span>
+      <a class="sil-link-btn" href="./index.sil">SIL Layer for AI Agents: /ecosystem/sir-compiler/index.sil →</a>
+    </div>
+
+    <header class="hero">
+      <div class="badge-row">
+        <span class="badge">STF Ecosystem · Self-Hosting Compiler</span>
+        <span class="badge badge-green">253/253 Tests · ~103 KB WASM · Fixpoint Proven</span>
+        <a class="badge" href="./index.sil">SIL Layer: /ecosystem/sir-compiler/index.sil</a>
+      </div>
+      <h1>SIR Compiler — Self-Hosting SIR→WASM Compiler</h1>
+      <p class="subtitle">
+        A self-compiling SIR-to-WebAssembly compiler written entirely in SIR itself (~103 KB WASM binary, proven byte-for-byte self-compilation fixpoint, 253/253 test suite passing) — serving as live empirical proof of the STF/SIR architecture's resilience.
+      </p>
+      <div class="nav-links">
+        <a class="btn btn-primary" href="https://github.com/ais-space/sir-compiler" target="_blank" rel="noopener">GitHub: github.com/ais-space/sir-compiler →</a>
+        <a class="btn" href="/ecosystem/">Back to Ecosystem Hub</a>
+        <a class="btn" href="./index.sil">Read .SIL Interface</a>
+      </div>
+    </header>
+
+    <section>
+      <h2>Verified Technical Milestones</h2>
+      <div class="grid-3">
+        <div class="card card-highlight">
+          <h3>~103 KB Self-Compiled Binary</h3>
+          <p>
+            The compiler source is authored in SIR and lowers directly into a compact, zero-dependency ~103 KB WebAssembly binary containing the full lexer, STF/SIR tree parser, semantic validator, and WASM binary emitter.
+          </p>
+        </div>
+
+        <div class="card card-highlight">
+          <h3>Byte-for-Byte Fixpoint Proven</h3>
+          <p>
+            When the compiled WebAssembly binary compiles its own SIR source code, the resulting stage-2 and stage-3 WASM binaries match <strong>byte-for-byte</strong> — demonstrating a deterministic self-compilation fixpoint.
+          </p>
+        </div>
+
+        <div class="card card-highlight">
+          <h3>253 / 253 Test Suite Passing</h3>
+          <p>
+            Verified across a comprehensive 253-test verification suite covering grammar edge cases, control flow, memory layout, type checking, and multi-stage bootstrap reproducibility.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Empirical Proof of Architectural Durability</h2>
+      <div class="card card-highlight">
+        <h3>Built by Non-Frontier Models Across Repeated Context Autocompressions</h3>
+        <p>
+          Any language looks easy when a frontier model edits a 50-line snippet with the full language manual in prompt. The real test of an agent-native intermediate representation is whether weaker or mid-tier models can build and maintain a complex, self-hosting compiler over long multi-session runs.
+        </p>
+        <ul class="clean">
+          <li><strong>Written by Tencent Hy3 (200k Context Window):</strong> The bulk of the self-hosting SIR compiler was authored by a comparatively weak model — <strong>Tencent Hy3</strong> operating within a 200k context window.</li>
+          <li><strong>Final Polishing by Muse Spark 1.3 Under Aggressive Autocompression:</strong> Final bring-up and fixpoint convergence were completed by <strong>Muse Spark 1.3</strong>, which maintained structural and semantic accuracy when writing and refactoring SIR code despite undergoing <strong>multiple automatic context compressions without re-reading the SIR specification</strong>.</li>
+          <li><strong>Why This Worked:</strong> Because SIR encodes semantics explicitly in self-labeling STF nodes rather than brittle punctuation or implicit grammar rules, the model could infer valid structure directly from surrounding code fragments even after the formal specification had been compressed out of active context.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Compiler Repository</h2>
+      <div class="card">
+        <h3>Inspect Source Code, Bootstrap Scripts &amp; Fixpoint Tests</h3>
+        <p>
+          The complete SIR source code of the compiler, WebAssembly bootstrap artifacts, and the 253-test verification suite are publicly available on GitHub:
+        </p>
+        <p>
+          <a class="btn btn-primary" href="https://github.com/ais-space/sir-compiler" target="_blank" rel="noopener">https://github.com/ais-space/sir-compiler →</a>
+          <a class="btn" href="/monitoring/">Explore Sir Revizor Code Monitoring →</a>
+        </p>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-grid">
+        <div>
+          <strong>Vladimir Sitnikov — Architect &amp; Technical Founder</strong><br>
+          AIS Platform (<a class="repo-link" href="https://ais-platform.dev">ais-platform.dev</a>)<br>
+          SIL Interface for this page: <a class="repo-link" href="./index.sil">/ecosystem/sir-compiler/index.sil</a>
+        </div>
+        <div>
+          Commercial &amp; Partnerships: <a class="repo-link" href="mailto:founder@ais-platform.dev">founder@ais-platform.dev</a><br>
+          Specification &amp; Security: <a class="repo-link" href="mailto:support@ais-platform.dev">support@ais-platform.dev</a>
+        </div>
+        <div>
+          Telegram: <a class="repo-link" href="https://t.me/Pastalog" target="_blank" rel="noopener">@Pastalog</a> (<a class="repo-link" href="https://t.me/Pastalog" target="_blank" rel="noopener">https://t.me/Pastalog</a>)<br>
+          GitHub: <a class="repo-link" href="https://github.com/ais-space" target="_blank" rel="noopener">https://github.com/ais-space</a><br>
+          LinkedIn: <a class="repo-link" href="https://www.linkedin.com/in/vladimir-sitnikov-3a61433b5" target="_blank" rel="noopener">https://www.linkedin.com/in/vladimir-sitnikov-3a61433b5</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

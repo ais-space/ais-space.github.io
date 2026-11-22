@@ -1,0 +1,150 @@
+Context
+    Version: 0.3
+    Document: AIS Platform — STF Ecosystem Hub v1.1.0
+    CanonicalSil: /ecosystem/index.sil
+    Language: en
+    Origin: System
+
+Page
+    Type: Page
+    Role: Content
+    Purpose: STF Ecosystem Hub explaining why AI agents need grammar-level semantics rather than human-centric visual formats, with navigation to all 5 STF ecosystem components (STF, SIL, STF-Memory, SIR, SIR Compiler).
+
+    SiteNavigation
+        Type: Section
+        Role: Navigation
+        Caption: AIS Platform Complete SIL Navigation Map
+        Purpose: Direct links to all 9 SIL semantic pages across ais-platform.dev
+
+        NavHome
+            Type: Link
+            Caption: Home — AIS Platform Overview
+            Navigate: /index.sil
+
+        NavEcosystemHub
+            Type: Link
+            Caption: STF Ecosystem Hub
+            Navigate: /ecosystem/index.sil
+
+        NavSTF
+            Type: Link
+            Caption: STF — Semantic Text Format
+            Navigate: /ecosystem/stf/index.sil
+
+        NavSIL
+            Type: Link
+            Caption: SIL — Semantic Interface Layer
+            Navigate: /ecosystem/sil/index.sil
+
+        NavSTFMemory
+            Type: Link
+            Caption: STF-Memory — Structured Long-Term Agent Memory
+            Navigate: /ecosystem/stf-memory/index.sil
+
+        NavSIR
+            Type: Link
+            Caption: SIR — Semantic Intermediate Representation
+            Navigate: /ecosystem/sir/index.sil
+
+        NavSIRCompiler
+            Type: Link
+            Caption: SIR Compiler — Self-Hosting SIR-to-WASM Compiler
+            Navigate: /ecosystem/sir-compiler/index.sil
+
+        NavMonitoring
+            Type: Link
+            Caption: Commercial Offer — Sir Revizor Continuous Code Security Monitoring
+            Navigate: /monitoring/index.sil
+
+        NavCareers
+            Type: Link
+            Caption: Careers & Partnerships — Independent Sales Partner & Business Co-Founder
+            Navigate: /careers/index.sil
+
+    Thesis
+        Type: Section
+        Role: Content
+        Caption: Why AI Agents Require Native Semantic Grammar
+        Purpose: Rationale for replacing human-oriented visual interfaces and syntax with explicit grammar-level semantics
+
+        HumanVsAgent
+            Type: Text
+            Caption: Human Perception vs. Machine Semantics
+            Content: Existing web interfaces (HTML/DOM/JS), document markups, and programming languages were designed around human visual perception. AI agents waste context capacity inferring structure from visual markup and punctuation, while remaining vulnerable to prompt injection across blurred data boundaries. The STF ecosystem encodes hierarchy, semantics, and trust provenance directly in the grammar.
+
+    Components
+        Type: Section
+        Role: Content
+        Caption: The 5 Components of the STF Ecosystem
+        Purpose: Detailed directory of all 5 specifications and tools in the STF stack
+
+        ComponentSTF
+            Type: Section
+            Role: Content
+            Caption: 1. STF — Semantic Text Format
+            Content: The core of the ecosystem: an explicit semantic section tree, grammar-enforced trust zones (System, UserContent), native EBNF syntactic protection against prompt injection, and reduced inference cost for smaller models.
+            Navigate: /ecosystem/stf/index.sil
+
+        ComponentSIL
+            Type: Section
+            Role: Content
+            Caption: 2. SIL — Semantic Interface Layer
+            Content: Application extension of STF enabling AI agents to navigate and interact with websites without parsing raw HTML/DOM or executing JavaScript, organized into 5 conformance profiles.
+            Navigate: /ecosystem/sil/index.sil
+
+        ComponentSTFMemory
+            Type: Section
+            Role: Content
+            Caption: 3. STF-Memory — Structured Long-Term Agent Memory
+            Content: Structural state model for long-horizon agent memory featuring explicit conflict tracking, trust provenance, and views/projections instead of flat append-only logs.
+            Navigate: /ecosystem/stf-memory/index.sil
+
+        ComponentSIR
+            Type: Section
+            Role: Content
+            Caption: 4. SIR — Semantic Intermediate Representation
+            Content: Executable semantic intermediate representation built on STF for coding agents and verifiable compilation to WebAssembly.
+            Navigate: /ecosystem/sir/index.sil
+
+        ComponentSIRCompiler
+            Type: Section
+            Role: Content
+            Caption: 5. SIR Compiler — Self-Hosting SIR-to-WASM Compiler
+            Content: Self-compiling compiler written in SIR itself (~103 KB binary, proven byte-for-byte self-compilation fixpoint, 253/253 tests), demonstrating structural durability under aggressive context autocompression.
+            Navigate: /ecosystem/sir-compiler/index.sil
+
+    ContactSection
+        Type: Section
+        Role: Content
+        Caption: Contacts — Vladimir Sitnikov
+        Purpose: Direct contact channels
+
+        FounderIdentity
+            Type: Text
+            Caption: Architect & Technical Founder
+            Content: Vladimir Sitnikov — Architect & Technical Founder
+
+        EmailCommercial
+            Type: Text
+            Caption: Commercial & Partnerships
+            Content: founder@ais-platform.dev
+
+        EmailSupport
+            Type: Text
+            Caption: Specification & Security
+            Content: support@ais-platform.dev
+
+        TelegramLink
+            Type: Link
+            Caption: Telegram (@Pastalog)
+            Navigate: https://t.me/Pastalog
+
+        GitHubLink
+            Type: Link
+            Caption: GitHub (ais-space)
+            Navigate: https://github.com/ais-space
+
+        LinkedInLink
+            Type: Link
+            Caption: LinkedIn (Vladimir Sitnikov)
+            Navigate: https://www.linkedin.com/in/vladimir-sitnikov-3a61433b5

@@ -1,0 +1,134 @@
+Context
+    Version: 0.3
+    Document: AIS Platform — STF (Semantic Text Format) Specification Overview v1.1.0
+    CanonicalSil: /ecosystem/stf/index.sil
+    Language: en
+    Origin: System
+
+Page
+    Type: Page
+    Role: Content
+    Purpose: Detailed overview of STF (Semantic Text Format) — the core specification of the STF ecosystem featuring explicit semantic section trees, trust zones (System, UserContent), native EBNF syntactic protection against prompt injections, and lower inference costs for smaller models.
+
+    SiteNavigation
+        Type: Section
+        Role: Navigation
+        Caption: AIS Platform Complete SIL Navigation Map
+        Purpose: Direct links to all 9 SIL semantic pages across ais-platform.dev
+
+        NavHome
+            Type: Link
+            Caption: Home — AIS Platform Overview
+            Navigate: /index.sil
+
+        NavEcosystemHub
+            Type: Link
+            Caption: STF Ecosystem Hub
+            Navigate: /ecosystem/index.sil
+
+        NavSTF
+            Type: Link
+            Caption: STF — Semantic Text Format
+            Navigate: /ecosystem/stf/index.sil
+
+        NavSIL
+            Type: Link
+            Caption: SIL — Semantic Interface Layer
+            Navigate: /ecosystem/sil/index.sil
+
+        NavSTFMemory
+            Type: Link
+            Caption: STF-Memory — Structured Long-Term Agent Memory
+            Navigate: /ecosystem/stf-memory/index.sil
+
+        NavSIR
+            Type: Link
+            Caption: SIR — Semantic Intermediate Representation
+            Navigate: /ecosystem/sir/index.sil
+
+        NavSIRCompiler
+            Type: Link
+            Caption: SIR Compiler — Self-Hosting SIR-to-WASM Compiler
+            Navigate: /ecosystem/sir-compiler/index.sil
+
+        NavMonitoring
+            Type: Link
+            Caption: Commercial Offer — Sir Revizor Continuous Code Security Monitoring
+            Navigate: /monitoring/index.sil
+
+        NavCareers
+            Type: Link
+            Caption: Careers & Partnerships — Independent Sales Partner & Business Co-Founder
+            Navigate: /careers/index.sil
+
+    SpecificationOverview
+        Type: Section
+        Role: Content
+        Caption: STF — Semantic Text Format (Core of the Ecosystem)
+        Purpose: Architectural design and guarantees of STF
+
+        SectionTree
+            Type: Text
+            Caption: Explicit Semantic Section Tree
+            Content: STF organizes information as a clean indentation-scoped tree of named semantic sections and key-value properties, eliminating ambiguous delimiters, escaping noise, and closing-tag overhead.
+
+        TrustZones
+            Type: Text
+            Caption: Trust Zones (System, UserContent, and Others)
+            Content: Every section in STF belongs to an explicit provenance and trust zone such as System or UserContent, making authority boundaries first-class syntactic properties rather than informal prompt conventions.
+
+        PromptInjectionDefense
+            Type: Text
+            Caption: Native EBNF Syntactic Defense Against Prompt Injection
+            Content: Because trust boundaries are enforced at the EBNF grammar syntax level, untrusted text inside a UserContent branch cannot syntactically escape its subtree or forge System instructions.
+
+        InferenceEfficiency
+            Type: Text
+            Caption: Reduced Inference Cost for Smaller Models
+            Content: By removing visual markup clutter and deep punctuation nesting, STF reduces token footprint and cognitive load, enabling smaller models to parse and generate structured documents reliably at lower inference cost.
+
+        StructureExample
+            Type: Text
+            Caption: Example STF Document Structure
+            Content: An STF document begins with a Context block (Version, Document, Language, Origin: System) followed by hierarchical sections where authoritative PolicySection (Origin: System) and untrusted IncomingSubmission (Origin: UserContent) are strictly separated by grammar.
+
+        RepositoryLink
+            Type: Link
+            Caption: Official STF Repository on GitHub
+            Navigate: https://github.com/ais-space/stf
+
+    ContactSection
+        Type: Section
+        Role: Content
+        Caption: Contacts — Vladimir Sitnikov
+        Purpose: Direct contact channels
+
+        FounderIdentity
+            Type: Text
+            Caption: Architect & Technical Founder
+            Content: Vladimir Sitnikov — Architect & Technical Founder
+
+        EmailCommercial
+            Type: Text
+            Caption: Commercial & Partnerships
+            Content: founder@ais-platform.dev
+
+        EmailSupport
+            Type: Text
+            Caption: Specification & Security
+            Content: support@ais-platform.dev
+
+        TelegramLink
+            Type: Link
+            Caption: Telegram (@Pastalog)
+            Navigate: https://t.me/Pastalog
+
+        GitHubLink
+            Type: Link
+            Caption: GitHub (ais-space)
+            Navigate: https://github.com/ais-space
+
+        LinkedInLink
+            Type: Link
+            Caption: LinkedIn (Vladimir Sitnikov)
+            Navigate: https://www.linkedin.com/in/vladimir-sitnikov-3a61433b5

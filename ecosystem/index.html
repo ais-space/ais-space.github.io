@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>STF Ecosystem Hub — Agent-Native Semantic Infrastructure | AIS Platform</title>
+  <meta name="description" content="Why legacy web interfaces and programming languages were built for human perception, and how the 5-component STF ecosystem (STF, SIL, STF-Memory, SIR, SIR Compiler) gives AI agents pure grammar-level semantics.">
+  <link rel="sil" href="./index.sil" type="text/sil">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <div class="container">
+    <nav class="topbar" aria-label="Main navigation">
+      <a class="brand" href="/">AIS <span>Platform</span></a>
+      <div class="site-nav">
+        <a href="/">Home</a>
+        <a class="active" href="/ecosystem/">STF Ecosystem</a>
+        <a href="/monitoring/">Code Monitoring</a>
+        <a href="/careers/">Careers &amp; Partners</a>
+      </div>
+    </nav>
+
+    <div class="subnav" aria-label="Ecosystem components">
+      <span class="label">Ecosystem:</span>
+      <a class="active" href="/ecosystem/">Hub</a>
+      <a href="/ecosystem/stf/">STF</a>
+      <a href="/ecosystem/sil/">SIL</a>
+      <a href="/ecosystem/stf-memory/">STF-Memory</a>
+      <a href="/ecosystem/sir/">SIR</a>
+      <a href="/ecosystem/sir-compiler/">SIR Compiler</a>
+    </div>
+
+    <div class="sil-banner">
+      <span><strong>AI Agent Interface (SIL v0.3):</strong> Direct machine-readable semantic layer for this page.</span>
+      <a class="sil-link-btn" href="./index.sil">SIL Layer for AI Agents: /ecosystem/index.sil →</a>
+    </div>
+
+    <header class="hero">
+      <div class="badge-row">
+        <span class="badge">STF Ecosystem Hub</span>
+        <a class="badge" href="./index.sil">SIL Layer: /ecosystem/index.sil</a>
+      </div>
+      <h1>The STF Ecosystem — Pure Grammar-Level Semantics for AI Agents</h1>
+      <p class="subtitle">
+        Existing user interfaces, document formats, and programming languages were engineered around human sensory perception and visual layout. The STF ecosystem replaces visual heuristics with explicit, deterministic semantics encoded directly into the grammar.
+      </p>
+      <div class="nav-links">
+        <a class="btn btn-primary" href="/ecosystem/stf/">Start with STF Core →</a>
+        <a class="btn" href="https://github.com/ais-space" target="_blank" rel="noopener">GitHub: github.com/ais-space</a>
+        <a class="btn" href="./index.sil">Read .SIL Interface</a>
+      </div>
+    </header>
+
+    <section>
+      <h2>Why AI Agents Need Native Semantic Infrastructure</h2>
+      <div class="card card-highlight">
+        <h3>Human-Centric Formats vs. Agent-Native Grammar</h3>
+        <p>
+          HTML, CSS, DOM trees, Markdown, and traditional source syntaxes evolved for human eyes. When an AI agent interacts with a modern web application or maintains a large system over long sessions, it is forced to burn tokens reconstructing intent from visual layout tags, deeply nested punctuation, untrusted string concatenations, and flat chat logs.
+        </p>
+        <ul class="clean">
+          <li><strong>No Visual Guesswork:</strong> Instead of reverse-engineering <code>&lt;div&gt;</code> hierarchies and JavaScript bundles, an agent reads explicit intent, roles, actions, and navigation targets directly from the document grammar.</li>
+          <li><strong>Grammar-Enforced Trust Boundaries:</strong> Data provenance and trust zones (such as <code>System</code> vs. <code>UserContent</code>) are syntactic primitives in the EBNF grammar, eliminating ambiguity between instructions and untrusted payloads.</li>
+          <li><strong>Resilience Under Context Compression:</strong> Because every node carries self-contained semantic keys rather than position-sensitive punctuation, even smaller models and sessions undergoing repeated context autocompression preserve structural soundness.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>The 5 Ecosystem Components</h2>
+      <div class="card">
+        <h3>1. STF — Semantic Text Format (Foundation)</h3>
+        <p>
+          The core structural language of the ecosystem. Represents documents as an explicit tree of named semantic sections with built-in trust zones (<code>System</code>, <code>UserContent</code>, and others), providing native syntactic defense against prompt injections at the EBNF grammar level and significantly reducing inference cost for smaller language models.
+        </p>
+        <p>
+          <a class="btn" href="/ecosystem/stf/">Explore STF →</a>
+          <a class="repo-link" href="/ecosystem/stf/index.sil" style="margin-left: 12px;">SIL: /ecosystem/stf/index.sil</a> ·
+          <a class="repo-link" href="https://github.com/ais-space/stf" target="_blank" rel="noopener">github.com/ais-space/stf</a>
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>2. SIL — Semantic Interface Layer (Web &amp; Application Interface)</h3>
+        <p>
+          An application extension of STF designed for AI agent web navigation without parsing raw HTML/DOM or executing client-side JavaScript. Defines 5 conformance profiles ranging from read-only content discovery to interactive stateful workflows. Every page on <code>ais-platform.dev</code> publishes a live SIL representation alongside HTML.
+        </p>
+        <p>
+          <a class="btn" href="/ecosystem/sil/">Explore SIL →</a>
+          <a class="repo-link" href="/ecosystem/sil/index.sil" style="margin-left: 12px;">SIL: /ecosystem/sil/index.sil</a> ·
+          <a class="repo-link" href="https://github.com/ais-space/sil" target="_blank" rel="noopener">github.com/ais-space/sil</a>
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>3. STF-Memory — Structured Long-Term Agent Memory</h3>
+        <p>
+          A state-oriented memory architecture built on STF that replaces append-only flat transcript logs with explicit fact records, conflict detection and resolution, trust provenance, and task-specific projections — preventing memory drift and context degradation in long-horizon multi-agent runs.
+        </p>
+        <p>
+          <a class="btn" href="/ecosystem/stf-memory/">Explore STF-Memory →</a>
+          <a class="repo-link" href="/ecosystem/stf-memory/index.sil" style="margin-left: 12px;">SIL: /ecosystem/stf-memory/index.sil</a> ·
+          <a class="repo-link" href="https://github.com/ais-space/stf-memory" target="_blank" rel="noopener">github.com/ais-space/stf-memory</a>
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>4. SIR — Semantic Intermediate Representation</h3>
+        <p>
+          An executable semantic intermediate representation layered over STF for AI coding agents. Replaces fragile punctuation-heavy syntax with explicit semantic blocks for types, functions, control flow, and memory operations, enabling verifiable translation directly to WebAssembly.
+        </p>
+        <p>
+          <a class="btn" href="/ecosystem/sir/">Explore SIR →</a>
+          <a class="repo-link" href="/ecosystem/sir/index.sil" style="margin-left: 12px;">SIL: /ecosystem/sir/index.sil</a> ·
+          <a class="repo-link" href="https://github.com/ais-space/sir" target="_blank" rel="noopener">github.com/ais-space/sir</a>
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>5. SIR Compiler — Self-Hosting SIR→WASM Compiler</h3>
+        <p>
+          A self-compiling SIR-to-WebAssembly compiler written in SIR itself (~103 KB binary, proven byte-for-byte self-compilation fixpoint, 253/253 tests passing). Built to prove the practical durability of the SIR architecture when authored by compact models across repeated context autocompressions without re-reading the language specification.
+        </p>
+        <p>
+          <a class="btn" href="/ecosystem/sir-compiler/">Explore SIR Compiler →</a>
+          <a class="repo-link" href="/ecosystem/sir-compiler/index.sil" style="margin-left: 12px;">SIL: /ecosystem/sir-compiler/index.sil</a> ·
+          <a class="repo-link" href="https://github.com/ais-space/sir-compiler" target="_blank" rel="noopener">github.com/ais-space/sir-compiler</a>
+        </p>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-grid">
+        <div>
+          <strong>Vladimir Sitnikov — Architect &amp; Technical Founder</strong><br>
+          AIS Platform (<a class="repo-link" href="https://ais-platform.dev">ais-platform.dev</a>)<br>
+          SIL Interface for this page: <a class="repo-link" href="./index.sil">/ecosystem/index.sil</a>
+        </div>
+        <div>
+          Commercial &amp; Partnerships: <a class="repo-link" href="mailto:founder@ais-platform.dev">founder@ais-platform.dev</a><br>
+          Specification &amp; Security: <a class="repo-link" href="mailto:support@ais-platform.dev">support@ais-platform.dev</a>
+        </div>
+        <div>
+          Telegram: <a class="repo-link" href="https://t.me/Pastalog" target="_blank" rel="noopener">@Pastalog</a> (<a class="repo-link" href="https://t.me/Pastalog" target="_blank" rel="noopener">https://t.me/Pastalog</a>)<br>
+          GitHub: <a class="repo-link" href="https://github.com/ais-space" target="_blank" rel="noopener">https://github.com/ais-space</a><br>
+          LinkedIn: <a class="repo-link" href="https://www.linkedin.com/in/vladimir-sitnikov-3a61433b5" target="_blank" rel="noopener">https://www.linkedin.com/in/vladimir-sitnikov-3a61433b5</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
