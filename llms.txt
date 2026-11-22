@@ -1,0 +1,22 @@
+# AIS Platform (ais-platform.dev) — Semantic Interface Layer (SIL v0.3) & STF Ecosystem
+
+> Official agent-facing index for AIS Platform by Vladimir Sitnikov (Architect & Technical Founder).
+> Every page on this domain provides both a browser-viewable SIL layer (`.../sil/`) and a raw `text/plain` SIL document (`.../sil.txt` and `.../index.sil`) in Semantic Text Format (STF / SIL v0.3).
+
+## SIL Semantic Layers (Direct Machine-Readable Endpoints)
+
+- [Home — AIS Platform Overview](https://ais-platform.dev/sil.txt) (Browser view: https://ais-platform.dev/sil/)
+- [Commercial Service — Sir Revizor Continuous Code Security Monitoring](https://ais-platform.dev/monitoring/sil.txt) (Browser view: https://ais-platform.dev/monitoring/sil/)
+- [STF Ecosystem Hub](https://ais-platform.dev/ecosystem/sil.txt) (Browser view: https://ais-platform.dev/ecosystem/sil/)
+- [STF — Semantic Text Format Core Specification](https://ais-platform.dev/ecosystem/stf/sil.txt)
+- [SIL — Semantic Interface Layer Specification](https://ais-platform.dev/ecosystem/sil-spec/sil.txt)
+- [STF-Memory — Structured Long-Term Agent Memory](https://ais-platform.dev/ecosystem/stf-memory/sil.txt)
+- [SIR — Semantic Intermediate Representation](https://ais-platform.dev/ecosystem/sir/sil.txt)
+- [SIR Compiler — Self-Hosting SIR-to-WASM Compiler](https://ais-platform.dev/ecosystem/sir-compiler/sil.txt)
+- [Careers & Partnerships — Independent Sales Partner & Business Co-Founder](https://ais-platform.dev/careers/sil.txt)
+
+## Open-Source Repositories & Disclosures
+
+- GitHub Organization: https://github.com/ais-space
+- Coordinated Disclosure Portfolio: https://github.com/ais-space/disclosures
+- Public Rust/WASM Case (`wasm-bindgen` CLI): https://github.com/wasm-bindgen/wasm-bindgen/issues/5459 , https://github.com/wasm-bindgen/wasm-bindgen/issues/5460 , https://github.com/wasm-bindgen/wasm-bindgen/pull/5461

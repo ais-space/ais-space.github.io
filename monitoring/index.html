@@ -5,6 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sir Revizor Continuous Code Security Monitoring — Commercial Offer | AIS Platform</title>
   <meta name="description" content="Sir Revizor continuous daily code security monitoring across your entire language stack. Every finding confirmed by actual execution with a reproducible PoC trace, plus sanitized sample report.">
+  <link rel="canonical" href="https://ais-platform.dev/monitoring/">
+  <link rel="alternate" href="./sil.txt" type="text/plain" title="Raw SIL Layer (text/plain)">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ais-platform.dev/monitoring/">
+  <meta property="og:title" content="Sir Revizor Continuous Code Security Monitoring — Commercial Offer | AIS Platform">
+  <meta property="og:description" content="Sir Revizor continuous daily code security monitoring across your entire language stack. Every finding confirmed by actual execution with a reproducible PoC trace, plus sanitized sample report.">
   <link rel="sil" href="./sil/" type="text/sil">
   <link rel="stylesheet" href="../style.css">
 </head>
@@ -201,35 +207,38 @@
       </div>
 
       <div class="card card-highlight">
-        <h3>Sample Report #2 — Rust / WebAssembly Runtime (<code>descriptor_parser.rs</code>)</h3>
+        <h3>Sample Report #2 — Publicly Verifiable Rust / WebAssembly Case (<code>wasm-bindgen</code> Issues #5459, #5460 &amp; Fix PR #5461)</h3>
         <p>
-          To illustrate multi-language coverage beyond EVM smart contracts, below is a condensed execution-verified report from a Rust/WASM host-bridge component:
+          While security vulnerabilities remain strictly under embargo (or permanent confidentiality at the maintainer's request), non-security robustness defects can be shared openly. Below is a live, publicly verifiable Rust/WASM case found by Sir Revizor in <a class="repo-link" href="https://github.com/wasm-bindgen/wasm-bindgen" target="_blank" rel="noopener">wasm-bindgen/wasm-bindgen</a>:
         </p>
         <table class="meta-table">
           <tbody>
             <tr>
-              <th>Component / Commit</th>
-              <td><code>crates/cli-support/src/descriptor_parser.rs</code> (commit <code>f4e8b12</code>) — guest export stream decoder</td>
+              <th>Public Upstream Links</th>
+              <td>
+                <a class="repo-link" href="https://github.com/wasm-bindgen/wasm-bindgen/issues/5459" target="_blank" rel="noopener">Issue #5459</a> (descriptor panic) ·
+                <a class="repo-link" href="https://github.com/wasm-bindgen/wasm-bindgen/issues/5460" target="_blank" rel="noopener">Issue #5460</a> (truncated section panic) ·
+                <a class="repo-link" href="https://github.com/wasm-bindgen/wasm-bindgen/pull/5461" target="_blank" rel="noopener">Community Fix PR #5461</a>
+              </td>
+            </tr>
+            <tr>
+              <th>Component / Location</th>
+              <td><code>crates/cli-support/src/descriptor.rs:345</code> and <code>crates/cli-support/src/wit/mod.rs:2989</code></td>
             </tr>
             <tr>
               <th>Defect Class</th>
-              <td>Unhandled Boundary Value Causing Host Process Panic (Denial of Service across Worker Thread)</td>
+              <td>Unhandled Boundary Value &amp; Truncated Section Causing Host Process Panic (Exit Code <code>101</code> instead of <code>Result::Err</code>)</td>
             </tr>
             <tr>
-              <th>Severity &amp; Status</th>
-              <td><strong>Medium / High</strong> — Confirmed by isolated execution harness (<code>cargo test --release</code>); exit code <code>101</code> panic reproduced with a minimal 11-byte WASM guest payload.</td>
+              <th>Verification Status</th>
+              <td>Confirmed by execution with a minimal 11-byte WASM binary reproducer; control cases return expected <code>Err</code>.</td>
             </tr>
           </tbody>
         </table>
-        <p><strong>Root Cause &amp; Code Snippet:</strong> When decoding the <code>u32</code> type-descriptor stream emitted by a compiled WASM guest module, an unknown or malformed tag hits an unconditional <code>panic!("unknown descriptor: {other}")</code> arm instead of returning a recoverable <code>Result::Err</code>, crashing the entire host worker process:</p>
-<pre><code>pub fn decode_descriptor(stream: &amp;mut DescriptorStream) -&gt; Result&lt;Descriptor, Error&gt; {
-    match stream.next_u32()? {
-        0x01 =&gt; Ok(Descriptor::I32),
-        0x02 =&gt; Ok(Descriptor::I64),
-        other =&gt; panic!("unknown descriptor: {other}"), // &lt;-- BUG: untrusted guest u32 crashes host process
-    }
-}</code></pre>
-        <p><strong>Execution Proof &amp; Fix Verification:</strong> Passing a minimal 11-byte WASM module exporting <code>0xFFFFFFFF</code> terminates the host process with <code>thread 'main' panicked ... unknown descriptor: 4294967295 (exit code 101)</code>. Replacing the panic arm with <code>bail!("unknown descriptor value: {other}")</code> restores graceful error handling (<code>Err(InvalidDescriptor)</code>) across 50,000 fuzzed descriptor streams. <strong>Refuted by Execution in the same crate:</strong> a static warning flagging potential out-of-bounds slice indexing in <code>memory.get_region(ptr, len)</code> was refuted by execution testing — checked arithmetic <code>ptr.checked_add(len)</code> against <code>memory.data_size()</code> cleanly rejects overflow inputs before slice construction.</p>
+        <p><strong>Root Cause &amp; Code Snippet:</strong> When decoding the <code>u32</code> type-descriptor stream emitted by a WASM guest export (<code>__wbindgen_describe_*</code>), an unknown descriptor tag hits an unconditional <code>panic!("unknown descriptor: {other}")</code> arm instead of returning a recoverable <code>Result::Err</code> (and similarly <code>get_remaining(...).unwrap()</code> panics on a truncated <code>__wasm_bindgen_unstable</code> section):</p>
+<pre><code>// crates/cli-support/src/descriptor.rs:345
+other =&gt; panic!("unknown descriptor: {other}"), // &lt;-- crashes process (exit 101) instead of returning Err</code></pre>
+        <p><strong>Execution Proof &amp; Fix Verification:</strong> Passing a minimal 11-byte WASM module pushing <code>0xFFFFFFFF</code> aborts the CLI with <code>thread 'main' panicked at crates/cli-support/src/descriptor.rs:345:22: unknown descriptor: 4294967295 (exit code 101)</code>. Replacing unconditional panics with <code>bail!("unknown descriptor value: {other}")</code> (<a class="repo-link" href="https://github.com/wasm-bindgen/wasm-bindgen/pull/5461" target="_blank" rel="noopener">PR #5461</a>) restores graceful error handling.</p>
       </div>
     </section>
 

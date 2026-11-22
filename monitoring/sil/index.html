@@ -4,7 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SIL Layer — /monitoring/sil/</title>
+  <link rel="canonical" href="https://ais-platform.dev/monitoring/sil/">
   <link rel="alternate" href="../" type="text/html">
+  <link rel="alternate" href="../sil.txt" type="text/plain">
   <style>
     body {
       margin: 0;
@@ -160,8 +162,8 @@ Page
 
         RustWasmSampleReport
             Type: Text
-            Caption: Sample Report #2 — Rust / WebAssembly Runtime (descriptor_parser.rs)
-            Content: Component crates/cli-support/src/descriptor_parser.rs (commit f4e8b12). Defect Class: Unhandled Boundary Value Causing Host Process Panic. Severity: Medium/High, confirmed via cargo test --release with a minimal 11-byte WASM guest payload exporting 0xFFFFFFFF, which hits panic!(&quot;unknown descriptor: {other}&quot;) and terminates the host worker with exit code 101. Replacing panic! with bail! restores clean Result::Err handling across 50,000 fuzzed streams. Refuted by Execution in the same crate: a static warning on memory.get_region(ptr, len) was refuted by proving ptr.checked_add(len) bounds-checking rejects overflow inputs before slice creation.
+            Caption: Sample Report #2 — Publicly Verifiable Rust / WebAssembly Case (wasm-bindgen Issues #5459, #5460 &amp; Fix PR #5461)
+            Content: Publicly verifiable non-security robustness defects found by Sir Revizor in wasm-bindgen/wasm-bindgen: Issue #5459 (https://github.com/wasm-bindgen/wasm-bindgen/issues/5459 — crates/cli-support/src/descriptor.rs:345 panics with &quot;unknown descriptor: 4294967295&quot; and exit code 101 on a minimal 11-byte WASM guest payload pushing 0xFFFFFFFF) and Issue #5460 (https://github.com/wasm-bindgen/wasm-bindgen/issues/5460 — crates/cli-support/src/wit/mod.rs:2989 panics via unwrap() on None when parsing a truncated __wasm_bindgen_unstable custom section), addressed by community fix PR #5461 (https://github.com/wasm-bindgen/wasm-bindgen/pull/5461).
 
     CoordinatedDisclosurePortfolio
         Type: Section

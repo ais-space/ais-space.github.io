@@ -5,6 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>STF (Semantic Text Format) — Core Grammar &amp; Trust Zones | AIS Platform</title>
   <meta name="description" content="STF (Semantic Text Format): explicit semantic section trees, grammar-level trust zones (System, UserContent), native EBNF syntactic defense against prompt injection, and lower inference cost for smaller models.">
+  <link rel="canonical" href="https://ais-platform.dev/ecosystem/stf/">
+  <link rel="alternate" href="./sil.txt" type="text/plain" title="Raw SIL Layer (text/plain)">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ais-platform.dev/ecosystem/stf/">
+  <meta property="og:title" content="STF (Semantic Text Format) — Core Grammar &amp; Trust Zones | AIS Platform">
+  <meta property="og:description" content="STF (Semantic Text Format): explicit semantic section trees, grammar-level trust zones (System, UserContent), native EBNF syntactic defense against prompt injection, and lower inference cost for smaller models.">
   <link rel="sil" href="./sil/" type="text/sil">
   <link rel="stylesheet" href="../../style.css">
 </head>
@@ -71,7 +77,7 @@
         <div class="card card-highlight">
           <h3>Code-Enforced Prompt-Injection Defense via Grammar</h3>
           <p>
-            We do not rely on an LLM "obeying" prompt tags. Because STF is strictly machine-readable and trivially parsed, and an untrusted <code>UserContent</code> block cannot syntactically escape its indentation subtree or forge a <code>System</code> node, <strong>deterministic host code easily filters and strips unauthorized branches before they ever reach the agent or execution layer</strong>. That combination — strict EBNF structural confinement plus deterministic code filtering — provides real protection.
+            We do not rely on an LLM "obeying" prompt tags. Because STF is strictly machine-readable and trivially parsed, and an untrusted <code>UserContent</code> block cannot syntactically escape its indentation subtree or forge a <code>System</code> node, <strong>deterministic host code easily filters and strips unauthorized branches before they ever reach the agent or execution layer</strong>. As noted in the STF specification, this provides a deterministic parser-level architectural boundary (not a magic "silver bullet" that excuses unsafe downstream application logic).
           </p>
         </div>
 

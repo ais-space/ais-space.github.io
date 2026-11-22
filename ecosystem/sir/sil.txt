@@ -1,0 +1,124 @@
+Context
+    Version: 0.3
+    Document: AIS Platform — SIR (Semantic Intermediate Representation) Overview v1.1.0
+    CanonicalSil: /ecosystem/sir/sil/
+    Language: en
+    Origin: System
+
+Page
+    Type: Page
+    Role: Content
+    Purpose: Detailed overview of SIR (Semantic Intermediate Representation) — an executable semantic intermediate representation built on STF for AI coding agents and verifiable translation to WebAssembly.
+
+    SiteNavigation
+        Type: Section
+        Role: Navigation
+        Caption: AIS Platform Complete SIL Navigation Map
+        Purpose: Direct links to all 9 SIL semantic pages across ais-platform.dev
+
+        NavHome
+            Type: Link
+            Caption: Home — AIS Platform Overview
+            Navigate: /sil/
+
+        NavEcosystemHub
+            Type: Link
+            Caption: STF Ecosystem Hub
+            Navigate: /ecosystem/sil/
+
+        NavSTF
+            Type: Link
+            Caption: STF — Semantic Text Format
+            Navigate: /ecosystem/stf/sil/
+
+        NavSIL
+            Type: Link
+            Caption: SIL — Semantic Interface Layer
+            Navigate: /ecosystem/sil-spec/sil/
+
+        NavSTFMemory
+            Type: Link
+            Caption: STF-Memory — Structured Long-Term Agent Memory
+            Navigate: /ecosystem/stf-memory/sil/
+
+        NavSIR
+            Type: Link
+            Caption: SIR — Semantic Intermediate Representation
+            Navigate: /ecosystem/sir/sil/
+
+        NavSIRCompiler
+            Type: Link
+            Caption: SIR Compiler — Self-Hosting SIR-to-WASM Compiler
+            Navigate: /ecosystem/sir-compiler/sil/
+
+        NavMonitoring
+            Type: Link
+            Caption: Commercial Offer — Sir Revizor Continuous Code Security Monitoring
+            Navigate: /monitoring/sil/
+
+        NavCareers
+            Type: Link
+            Caption: Careers & Partnerships — Independent Sales Partner & Business Co-Founder
+            Navigate: /careers/sil/
+
+    SpecificationOverview
+        Type: Section
+        Role: Content
+        Caption: SIR — Semantic Intermediate Representation
+        Purpose: Design principles and WebAssembly compilation model of SIR
+
+        ExecutableSTFLayer
+            Type: Text
+            Caption: Executable Semantic Layer Over STF
+            Content: SIR applies STF's hierarchical section grammar to executable code. Modules, functions, types, control flow, and memory accesses are represented as explicit semantic blocks without punctuation ambiguity or implicit operator precedence traps.
+
+        AgentCodeSynthesis
+            Type: Text
+            Caption: Built for AI Coding Agents
+            Content: Self-labeling semantic nodes make code fragments locally self-contained, allowing coding agents to inspect, generate, and refactor systems logic reliably even under tight context windows.
+
+        VerifiableWASMTranslation
+            Type: Text
+            Caption: Verifiable Translation to WebAssembly
+            Content: SIR maps deterministically to WebAssembly primitives and structured control flow, supporting sandboxed execution and byte-level build reproducibility.
+
+        RepositoryLink
+            Type: Link
+            Caption: Official SIR Repository on GitHub
+            Navigate: https://github.com/ais-space/sir
+
+    ContactSection
+        Type: Section
+        Role: Content
+        Caption: Contacts — Vladimir Sitnikov
+        Purpose: Direct contact channels
+
+        FounderIdentity
+            Type: Text
+            Caption: Architect & Technical Founder
+            Content: Vladimir Sitnikov — Architect & Technical Founder
+
+        EmailCommercial
+            Type: Text
+            Caption: Commercial & Partnerships
+            Content: founder@ais-platform.dev
+
+        EmailSupport
+            Type: Text
+            Caption: Specification & Security
+            Content: support@ais-platform.dev
+
+        TelegramLink
+            Type: Link
+            Caption: Telegram (@Pastalog)
+            Navigate: https://t.me/Pastalog
+
+        GitHubLink
+            Type: Link
+            Caption: GitHub (ais-space)
+            Navigate: https://github.com/ais-space
+
+        LinkedInLink
+            Type: Link
+            Caption: LinkedIn (Vladimir Sitnikov)
+            Navigate: https://www.linkedin.com/in/vladimir-sitnikov-3a61433b5
